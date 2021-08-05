@@ -72,6 +72,9 @@ export const MobileNavMenu = () => {
         <Item spacing={4} variant="large" href="/blog">
           Blog
         </Item>
+        <Item spacing={4} variant="large" href="/AmarResume.pdf">
+        CV
+        </Item>
       </VStack>
       <VStack p={4} w="100%" my={8} spacing={8} as="ul">
         <Item variant="large" href="/newsletter">
