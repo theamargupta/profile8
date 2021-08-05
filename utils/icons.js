@@ -16,7 +16,8 @@ import {
   SiFirebase,
   SiHeroku,
   SiNuxtDotJs,
-  SiVueDotJs
+  SiVueDotJs,
+  SiRedux,
 } from 'react-icons/si';
 export const toolsIcons = {
   SiHtml5,
@@ -36,6 +37,6 @@ export const toolsIcons = {
   SiTypescript,
   SiHeroku,
   SiNuxtDotJs,
-  SiVueDotJs
-  
+  SiVueDotJs,
+  SiRedux,
 };
