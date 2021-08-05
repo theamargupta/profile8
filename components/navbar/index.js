@@ -5,7 +5,6 @@ import { useColorMode } from '@chakra-ui/color-mode';
 import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';
 import { IoMoon, IoSunnyOutline } from 'react-icons/io5';
 import { StyledLink } from '../styled/link';
-import { Logo } from '@/components/svg';
 
 export const Navbar = ({ isOpen, toggleIsOpen }) => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -18,7 +17,9 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
       justify="space-between"
     >
       <MenuButton toggleIsOpen={toggleIsOpen} />
-      <Logo fill={colorDark} />
+      {/* <NextLink href="/">
+      <Image src="https://bit.ly/sage-adebayo" layout='fill' alt="Segun Adebayo" />
+      </NextLink> */}
       <HStack spacing={{ base: 0, md: 8 }}>
         <Flex align="center" display={{ base: 'none', lg: 'flex' }} as="ul">
           <Item variant="noStyle" href="/">
@@ -30,7 +31,7 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
           <Item variant="noStyle" href="/projects">
             Projects
           </Item>
-          <Item isExternal variant="noStyle" href="/gregogun-cv-2021.pdf">
+          <Item isExternal variant="noStyle" href="/amar-resume.pdf">
             CV
           </Item>
         </Flex>

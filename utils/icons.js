@@ -1,0 +1,41 @@
+import {
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiJavascript,
+  SiReact,
+  SiGraphql,
+  SiNodeDotJs,
+  SiNextDotJs,
+  SiElectron,
+  SiFigma,
+  SiStorybook,
+  SiAdobe,
+  SiSocketDotIo,
+  SiTypescript,
+  SiFirebase,
+  SiHeroku,
+  SiNuxtDotJs,
+  SiVueDotJs
+} from 'react-icons/si';
+export const toolsIcons = {
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiJavascript,
+  SiReact,
+  SiGraphql,
+  SiNodeDotJs,
+  SiNextDotJs,
+  SiElectron,
+  SiFigma,
+  SiStorybook,
+  SiAdobe,
+  SiSocketDotIo,
+  SiFirebase,
+  SiTypescript,
+  SiHeroku,
+  SiNuxtDotJs,
+  SiVueDotJs
+  
+};

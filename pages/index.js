@@ -10,24 +10,24 @@ import {
   List,
   Icon
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Container from '@/layouts/container';
 import { HeroVisual } from '@/components/svg/heroVisual';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import Subscribe from '@/components/subscribe';
-import projects from '@/data/projects';
+import { fetchFeatureProjects } from '@/services/dataapi';
 import { ProjectCard } from '@/components/projectCard';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { css } from '@emotion/react';
 import { BsArrowDown } from 'react-icons/bs';
-import { useEffect, useState } from 'react';
 
-export default function Homepage() {
+export default function Homepage({projects}) {
   return (
     <Container>
       <ContentWrapper>
         <Hero />
-        <FeaturedProjects />
+        <FeaturedProjects projects={projects} />
         <Subscribe />
       </ContentWrapper>
     </Container>
@@ -134,7 +134,7 @@ const ScrollArrow = ({ scrollPos }) => {
   );
 };
 
-const FeaturedProjects = () => {
+const FeaturedProjects = ({projects}) => {
   return (
     <VStack spacing="4rem" w="100%" m="auto">
       <FeatureHeading>Featured Projects</FeatureHeading>
@@ -144,7 +144,7 @@ const FeaturedProjects = () => {
         direction={{ base: 'column', xl: 'row' }}
         justify="space-evenly"
       >
-        <Projects />
+        <Projects projects={projects} />
       </Flex>
       <NextLink href="/projects" passHref>
         <Button
@@ -162,16 +162,15 @@ const FeaturedProjects = () => {
   );
 };
 
-const Projects = () => {
+const Projects = ({projects}) => {
   return (
     <List
       mx="auto"
       justifyContent="space-between"
       display={{ base: 'block', '2xl': 'flex' }}
     >
-      {projects
-        .filter((project) => project.feature)
-        .map((project) => (
+      {
+      projects.map((project) => (
           <ProjectCard
             data-testid="project-card"
             logo={project.logo}
@@ -241,3 +240,11 @@ const FeatureHeading = ({ children }) => {
     </Heading>
   );
 };
+export async function getStaticProps() {
+  const projects = await fetchFeatureProjects();
+  return {
+    props: {
+      projects
+    }
+  };
+}

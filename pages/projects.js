@@ -9,19 +9,19 @@ import {
 import Container from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { ProjectCard } from '@/components/projectCard';
-import projects from '@/data/projects';
+import { fetchProjects } from '@/services/dataapi';
 
-const Projects = () => {
+const Projects = ({ projects }) => {
   return (
     <Container title="Projects | Amar Gupta">
       <ContentWrapper>
-        <Intro />
+        <Intro projects={projects} />
       </ContentWrapper>
     </Container>
   );
 };
 
-const Intro = () => {
+const Intro = ({ projects }) => {
   return (
     <Box w="90%" as="section" mb="2rem">
       <Heading pl="1rem" as="h1" variant="h1">
@@ -30,12 +30,12 @@ const Intro = () => {
       <Text pl="1rem" variant="subtitle" mb="4rem" w="80%">
         Here are some projects that I've recently worked on.
       </Text>
-      <ProjectList />
+      <ProjectList projects={projects} />
     </Box>
   );
 };
 
-const ProjectList = () => {
+const ProjectList = ({ projects }) => {
   return (
     <List
       mx="auto"
@@ -59,5 +59,12 @@ const ProjectList = () => {
     </List>
   );
 };
-
+export async function getStaticProps() {
+  const projects = await fetchProjects();
+  return {
+    props: {
+      projects
+    }
+  };
+}
 export default Projects;

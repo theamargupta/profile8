@@ -23,6 +23,7 @@ module.exports = {
           '@/layouts': path.resolve(__dirname, '../layouts'),
           '@/hooks': path.resolve(__dirname, '../utils/hooks'),
           '@/data': path.resolve(__dirname, '../data'),
+          '@/services': path.resolve(__dirname, '../services'),
           '@/utils': path.resolve(__dirname, '../utils')
         }
       }

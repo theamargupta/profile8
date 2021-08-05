@@ -1,50 +1,43 @@
 import {
   SiGithub,
   SiLinkedin,
-  SiTwitter,
-  SiTwitch,
-  SiYoutube,
-  SiDiscord
+  SiFacebook,
+  SiGoogle,
+  SiInstagram,
 } from 'react-icons/si';
 
 export const github = {
   icon: SiGithub,
-  href: 'https://github.com/gregogun',
+  href: 'https://github.com/theamargupta',
   name: 'github',
   color: null
 };
 
 export const linkedin = {
   icon: SiLinkedin,
-  href: 'https://www.linkedin.com/in/greg-ogun/',
+  href: 'https://www.linkedin.com/in/amar-gupta-2684a1157/',
   name: 'linkedin',
   color: '#0A66C2'
 };
 
-export const twitter = {
-  icon: SiTwitter,
-  href: 'https://twitter.com/gregogun',
-  name: 'twitter',
+export const facebook = {
+  icon: SiFacebook,
+  href: 'https://www.facebook.com/amarlalaji',
+  name: 'Facebook',
   color: '#1DA1F2'
 };
 
-export const twitch = {
-  icon: SiTwitch,
-  href: 'https://www.twitch.tv/gregogun',
-  name: 'twitch',
+export const instagram = {
+  icon: SiInstagram,
+  href: 'https://www.instagram.com/amarguptta/',
+  name: 'Instagram',
   color: '#9146FF'
 };
 
-export const youtube = {
-  icon: SiYoutube,
-  href: 'https://www.youtube.com/channel/UCQDUHOvgodaEqjHm9Ihn87w',
-  name: 'youtube',
+export const google = {
+  icon: SiGoogle,
+  href: 'mailto:theamargupta.tech@gmail.com',
+  name: 'Google',
   color: '#FF0000'
 };
 
-export const discord = {
-  icon: SiDiscord,
-  href: 'https://discord.gg/NHCkzptb',
-  name: 'discord',
-  color: '#5865F2'
-};

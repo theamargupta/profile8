@@ -4,7 +4,7 @@ import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
-import { github, linkedin, twitch, twitter, youtube } from '@/data/socials';
+import { github, linkedin, instagram, facebook, google } from '@/data/socials';
 
 export const Footer = () => {
   const [isLarge] = useMediaQuery('(min-width: 992px)');
@@ -46,22 +46,22 @@ const Condensed = () => {
         name={linkedin.name}
       />
       <SocialLink
-        color={twitter.color}
-        icon={twitter.icon}
-        href={twitter.href}
-        name={twitter.name}
+        color={facebook.color}
+        icon={facebook.icon}
+        href={facebook.href}
+        name={facebook.name}
       />
       <SocialLink
-        color={twitch.color}
-        icon={twitch.icon}
-        href={twitch.href}
-        name={twitch.name}
+        color={instagram.color}
+        icon={instagram.icon}
+        href={instagram.href}
+        name={instagram.name}
       />
       <SocialLink
-        color={youtube.color}
-        icon={youtube.icon}
-        href={youtube.href}
-        name={youtube.name}
+        color={google.color}
+        icon={google.icon}
+        href={google.href}
+        name={google.name}
       />
     </HStack>
   );
@@ -82,7 +82,7 @@ const MainRoutes = () => {
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about">About</NavLink>
       <NavLink href="/projects">Projects</NavLink>
-      <NavLink href="/gregogun-cv-2021.pdf">CV</NavLink>
+      <NavLink href="/amar-resume.pdf">CV</NavLink>
     </VStack>
   );
 };
@@ -117,28 +117,28 @@ const Socials = () => {
         LinkedIn
       </SocialLink>
       <SocialLink
-        color={twitter.color}
-        icon={twitter.icon}
-        href={twitter.href}
-        name={twitter.name}
+        color={facebook.color}
+        icon={facebook.icon}
+        href={facebook.href}
+        name={facebook.name}
       >
-        Twitter
+        Facebook
       </SocialLink>
       <SocialLink
-        color={twitch.color}
-        icon={twitch.icon}
-        href={twitch.href}
-        name={twitch.name}
+        color={instagram.color}
+        icon={instagram.icon}
+        href={instagram.href}
+        name={instagram.name}
       >
-        Twitch
+        Instagram
       </SocialLink>
       <SocialLink
-        color={youtube.color}
-        icon={youtube.icon}
-        href={youtube.href}
-        name={youtube.name}
+        color={google.color}
+        icon={google.icon}
+        href={google.href}
+        name={google.name}
       >
-        Youtube
+        Google
       </SocialLink>
     </VStack>
   );

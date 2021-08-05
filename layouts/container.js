@@ -42,7 +42,7 @@ const Seo = ({ ...customMeta }) => {
     title: 'Amar Gupta',
     description:
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
-    image: 'https://gregogun.com/static/images/banner.png',
+    image: 'https://amargupta.tech/static/images/banner2.jpeg',
     type: 'website',
     ...customMeta
   };
@@ -51,7 +51,7 @@ const Seo = ({ ...customMeta }) => {
     <Head>
       <title>{meta.title}</title>
       <meta content={meta.description} name="description" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/public/static/favicons/favicon.ico" />
     </Head>
   );
 };

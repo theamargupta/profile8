@@ -12,7 +12,9 @@ import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import Icon from '@chakra-ui/icon';
 import { Button } from '@chakra-ui/button';
 import PropTypes from 'prop-types';
+import {toolsIcons} from '@/utils/icons'
 
+//-------------------------------------------
 export const ProjectCard = ({
   logo,
   title,
@@ -57,14 +59,14 @@ export const ProjectCard = ({
         </Heading>
         <Text data-testid="project-description">{description}</Text>
         <List display="flex" flexDirection="row">
-          {tools.map((tool) => (
-            <ListItem key={tool.id} p="0.5rem">
+          {tools.map(({id,name,icon,color}) => (
+            <ListItem key={id} p="0.5rem">
               <Icon
-                aria-label={tool.name}
+                aria-label={name}
                 transitionDuration="300ms"
                 boxSize="1.5rem"
-                as={tool.icon}
-                _hover={{ fill: tool.color }}
+                as={toolsIcons[icon]}
+                _hover={{ fill: color.hex }}
               />
             </ListItem>
           ))}
