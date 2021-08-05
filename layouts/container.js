@@ -51,7 +51,7 @@ const Seo = ({ ...customMeta }) => {
     <Head>
       <title>{meta.title}</title>
       <meta content={meta.description} name="description" />
-      <link rel="icon" href="/public/static/favicons/favicon.ico" />
+      <link rel="icon" href="/static/favicons/favicon.ico" />
     </Head>
   );
 };
