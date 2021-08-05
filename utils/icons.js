@@ -18,6 +18,10 @@ import {
   SiNuxtDotJs,
   SiVueDotJs,
   SiRedux,
+  SiMaterialUi,
+  SiNetlify,
+  SiGit,
+  SiGithub
 } from 'react-icons/si';
 export const toolsIcons = {
   SiHtml5,
@@ -39,4 +43,8 @@ export const toolsIcons = {
   SiNuxtDotJs,
   SiVueDotJs,
   SiRedux,
+  SiMaterialUi,
+  SiNetlify,
+  SiGit,
+  SiGithub
 };
