@@ -31,7 +31,7 @@ export const Navbar = ({ isOpen, toggleIsOpen }) => {
           <Item variant="noStyle" href="/projects">
             Projects
           </Item>
-          <Item isExternal variant="noStyle" href="/amar-resume.pdf">
+          <Item isExternal variant="noStyle" href="/AmarResume.pdf">
             CV
           </Item>
         </Flex>

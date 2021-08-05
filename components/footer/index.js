@@ -82,7 +82,7 @@ const MainRoutes = () => {
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about">About</NavLink>
       <NavLink href="/projects">Projects</NavLink>
-      <NavLink href="/amar-resume.pdf">CV</NavLink>
+      <NavLink href="/AmarResume.pdf">CV</NavLink>
     </VStack>
   );
 };
