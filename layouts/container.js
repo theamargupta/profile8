@@ -44,6 +44,7 @@ const Seo = ({ ...customMeta }) => {
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
     image: 'https://amargupta.tech/static/images/banner2.jpeg',
     type: 'website',
+    url:"https://amargupta.tech",
     ...customMeta
   };
 
@@ -51,6 +52,14 @@ const Seo = ({ ...customMeta }) => {
     <Head>
       <title>{meta.title}</title>
       <meta content={meta.description} name="description" />
+      <meta name="robots" content="index, follow" />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:image" content={meta.image} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:url" content={meta.url} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="300" />
+      <meta property="og:type" content={meta.type}/>
       <link rel="icon" href="/static/favicons/favicon.ico" />
     </Head>
   );

@@ -22,7 +22,8 @@ import {
   SiNetlify,
   SiGit,
   SiGithub,
-  SiStyledComponents
+  SiStyledComponents,
+  SiAuth0
 } from 'react-icons/si';
 export const toolsIcons = {
   SiHtml5,
@@ -48,6 +49,7 @@ export const toolsIcons = {
   SiNetlify,
   SiGit,
   SiGithub,
-  SiStyledComponents
+  SiStyledComponents,
+  SiAuth0
 };
 

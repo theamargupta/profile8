@@ -12,7 +12,7 @@ import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import Icon from '@chakra-ui/icon';
 import { Button } from '@chakra-ui/button';
 import PropTypes from 'prop-types';
-import {toolsIcons} from '@/utils/icons'
+import { toolsIcons } from '@/utils/icons';
 
 //-------------------------------------------
 export const ProjectCard = ({
@@ -57,9 +57,15 @@ export const ProjectCard = ({
         <Heading data-testid="project-title" as="h3" variant="h3">
           {title}
         </Heading>
-        <Text data-testid="project-description">{description}</Text>
+        {description.split('\n').map((i, key) => {
+          return (
+            <Text style={{ marginTop: '12px' }} key={key}>
+              {i}
+            </Text>
+          );
+        })}
         <List display="flex" flexDirection="row">
-          {tools.map(({id,name,icon,color}) => (
+          {tools.map(({ id, name, icon, color }) => (
             <ListItem key={id} p="0.5rem">
               <Icon
                 aria-label={name}
