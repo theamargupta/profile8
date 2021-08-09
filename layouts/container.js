@@ -60,7 +60,7 @@ const Seo = ({ ...customMeta }) => {
       <meta name="description" property="og:description" content={meta.description} />
       <meta property="og:url" content={meta.url} />
       <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="300" />
+      <meta property="og:image:height" content="627" />
       <meta property="og:type" content={meta.type}/>
       <link rel="icon" href="/static/favicons/favicon.ico" />
     </Head>
