@@ -42,7 +42,7 @@ const Seo = ({ ...customMeta }) => {
     title: 'Amar Gupta',
     description:
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
-    image: 'https://amargupta.tech/static/images/banner2.jpeg',
+    image: 'https://amargupta.tech/static/images/image.jpg',
     type: 'website',
     url:"https://www.amargupta.tech",
     ...customMeta
@@ -52,10 +52,12 @@ const Seo = ({ ...customMeta }) => {
     <Head>
       <title>{meta.title}</title>
       <meta content={meta.description} name="description" />
+      <meta name="author" content={meta.title} />
+      <meta property="article:published_time" content="2021-08-10" />
       <meta name="robots" content="index, follow" />
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:image" content={meta.image} />
-      <meta property="og:description" content={meta.description} />
+      <meta name="title" property="og:title" content={meta.title} />
+      <meta name="image" property="og:image" content={meta.image} />
+      <meta name="description" property="og:description" content={meta.description} />
       <meta property="og:url" content={meta.url} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="300" />
