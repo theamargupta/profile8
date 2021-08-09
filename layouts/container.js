@@ -44,7 +44,7 @@ const Seo = ({ ...customMeta }) => {
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
     image: 'https://amargupta.tech/static/images/banner2.jpeg',
     type: 'website',
-    url:"https://amargupta.tech",
+    url:"https://www.amargupta.tech",
     ...customMeta
   };
 
