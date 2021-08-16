@@ -3,9 +3,9 @@ import { Button } from '@chakra-ui/button';
 import Head from 'next/head';
 import useToggle from '@/utils/hooks/useToggle';
 import { MobileNavMenu, Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
+import Footer from '@/components/footer';
 
-const Container = ({ children, ...customMeta }) => {
+const Container = ({ children,socials, ...customMeta }) => {
   const [isOpen, toggleIsOpen] = useToggle();
 
   return (
@@ -30,7 +30,7 @@ const Container = ({ children, ...customMeta }) => {
         <Navbar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
         <VStack spacing={{ base: '8rem', lg: '10rem' }} id="skip" as="main">
           {isOpen ? <MobileNavMenu /> : children}
-          <Footer />
+          <Footer socials={socials} />
         </VStack>
       </Box>
     </Box>

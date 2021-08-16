@@ -16,15 +16,15 @@ import Container from '@/layouts/container';
 import { HeroVisual } from '@/components/svg/heroVisual';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import Subscribe from '@/components/subscribe';
-import { fetchFeatureProjects } from '@/services/dataapi';
+import { fetchHomePage } from '@/services/dataapi';
 import { ProjectCard } from '@/components/projectCard';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { css } from '@emotion/react';
 import { BsArrowDown } from 'react-icons/bs';
 
-export default function Homepage({projects}) {
+export default function Homepage({ projects, socials }) {
   return (
-    <Container>
+    <Container socials={socials}>
       <ContentWrapper>
         <Hero />
         <FeaturedProjects projects={projects} />
@@ -134,7 +134,7 @@ const ScrollArrow = ({ scrollPos }) => {
   );
 };
 
-const FeaturedProjects = ({projects}) => {
+const FeaturedProjects = ({ projects }) => {
   return (
     <VStack spacing="4rem" w="100%" m="auto">
       <FeatureHeading>Featured Projects</FeatureHeading>
@@ -162,27 +162,26 @@ const FeaturedProjects = ({projects}) => {
   );
 };
 
-const Projects = ({projects}) => {
+const Projects = ({ projects }) => {
   return (
     <List
       mx="auto"
       justifyContent="space-between"
       display={{ base: 'block', '2xl': 'flex' }}
     >
-      {
-      projects.map((project) => (
-          <ProjectCard
-            data-testid="project-card"
-            logo={project.logo}
-            title={project.title}
-            description={project.description}
-            tools={project.tools}
-            live={project.live}
-            proto={project.proto}
-            repo={project.repo}
-            key={project.id}
-          />
-        ))}
+      {projects.map((project) => (
+        <ProjectCard
+          data-testid="project-card"
+          logo={project.logo}
+          title={project.title}
+          description={project.description}
+          tools={project.tools}
+          live={project.live}
+          proto={project.proto}
+          repo={project.repo}
+          key={project.id}
+        />
+      ))}
     </List>
   );
 };
@@ -241,10 +240,8 @@ const FeatureHeading = ({ children }) => {
   );
 };
 export async function getStaticProps() {
-  const projects = await fetchFeatureProjects();
+  const props = await fetchHomePage();
   return {
-    props: {
-      projects
-    }
+    props
   };
 }

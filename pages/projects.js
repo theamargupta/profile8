@@ -9,11 +9,11 @@ import {
 import Container from '@/layouts/container';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { ProjectCard } from '@/components/projectCard';
-import { fetchProjects } from '@/services/dataapi';
+import { fetchProjectsPage } from '@/services/dataapi';
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects, socials }) => {
   return (
-    <Container title="Projects | Amar Gupta">
+    <Container title="Projects | Amar Gupta" socials={socials}>
       <ContentWrapper>
         <Intro projects={projects} />
       </ContentWrapper>
@@ -60,11 +60,9 @@ const ProjectList = ({ projects }) => {
   );
 };
 export async function getStaticProps() {
-  const projects = await fetchProjects();
+  const props = await fetchProjectsPage();
   return {
-    props: {
-      projects
-    }
+    props
   };
 }
 export default Projects;

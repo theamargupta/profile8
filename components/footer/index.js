@@ -4,9 +4,10 @@ import { Icon } from '@chakra-ui/icons';
 import { Link, HStack, VStack, Center } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
 import VisuallyHidden from '@chakra-ui/visually-hidden';
-import { github, linkedin, instagram, facebook, google } from '@/data/socials';
+import { fetchSocials } from '@/services/dataapi';
+import { toolsIcons } from '@/utils/icons';
 
-export const Footer = () => {
+const Footer = ({ socials }) => {
   const [isLarge] = useMediaQuery('(min-width: 992px)');
   return (
     <VStack
@@ -17,9 +18,9 @@ export const Footer = () => {
       spacing={{ base: '16px', lg: '64px' }}
       as="footer"
     >
-      {isLarge ? <Full /> : <Condensed />}
+      {isLarge ? <Full socials={socials} /> : <Condensed socials={socials} />}
       <Link
-        href={`${github.href}/portfolio-v2`}
+        href={`https://github.com/theamargupta/profile8`}
         isExternal
         variant="noStyle"
         align="center"
@@ -30,48 +31,27 @@ export const Footer = () => {
   );
 };
 
-const Condensed = () => {
+const Condensed = ({ socials }) => {
   return (
     <HStack as="ul">
-      <SocialLink
-        color={github.color}
-        icon={github.icon}
-        href={github.href}
-        name={github.name}
-      />
-      <SocialLink
-        color={linkedin.color}
-        icon={linkedin.icon}
-        href={linkedin.href}
-        name={linkedin.name}
-      />
-      <SocialLink
-        color={facebook.color}
-        icon={facebook.icon}
-        href={facebook.href}
-        name={facebook.name}
-      />
-      <SocialLink
-        color={instagram.color}
-        icon={instagram.icon}
-        href={instagram.href}
-        name={instagram.name}
-      />
-      <SocialLink
-        color={google.color}
-        icon={google.icon}
-        href={google.href}
-        name={google.name}
-      />
+      {socials?.map((data) => (
+        <SocialLink
+          key={data.id}
+          color={data.color}
+          icon={toolsIcons[`${data.icon}`]}
+          href={data.href}
+          name={data.name}
+        />
+      ))}
     </HStack>
   );
 };
 
-const Full = () => {
+const Full = ({ socials }) => {
   return (
     <HStack align="start" spacing="16rem">
       <MainRoutes />
-      <Socials />
+      <Socials socials={socials} />
     </HStack>
   );
 };
@@ -97,49 +77,20 @@ const SubRoutes = () => {
   );
 };
 
-const Socials = () => {
+const Socials = ({ socials }) => {
   return (
     <VStack spacing={0.25} h="100%" as="ul">
-      <SocialLink
-        color={github.color}
-        icon={github.icon}
-        href={github.href}
-        name={github.name}
-      >
-        Github
-      </SocialLink>
-      <SocialLink
-        color={linkedin.color}
-        icon={linkedin.icon}
-        href={linkedin.href}
-        name={linkedin.name}
-      >
-        LinkedIn
-      </SocialLink>
-      <SocialLink
-        color={facebook.color}
-        icon={facebook.icon}
-        href={facebook.href}
-        name={facebook.name}
-      >
-        Facebook
-      </SocialLink>
-      <SocialLink
-        color={instagram.color}
-        icon={instagram.icon}
-        href={instagram.href}
-        name={instagram.name}
-      >
-        Instagram
-      </SocialLink>
-      <SocialLink
-        color={google.color}
-        icon={google.icon}
-        href={google.href}
-        name={google.name}
-      >
-        Google
-      </SocialLink>
+      {socials?.map((data) => (
+        <SocialLink
+          key={data.id}
+          color={data.color}
+          icon={toolsIcons[`${data.icon}`]}
+          href={data.href}
+          name={data.name}
+        >
+          {data.name}
+        </SocialLink>
+      ))}
     </VStack>
   );
 };
@@ -185,3 +136,5 @@ const NavLink = ({ href, children }) => {
     </NextLink>
   );
 };
+
+export default Footer;

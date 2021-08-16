@@ -12,24 +12,23 @@ import {
 } from '@chakra-ui/layout';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import Container from '@/layouts/container';
-import * as tool from '@/data/tools';
 import Icon from '@chakra-ui/icon';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import useToggle from '@/utils/hooks/useToggle';
-import { linkedin, github } from '@/data/socials';
 import ContactForm from '@/components/contactForm';
 import { ContentWrapper } from '@/layouts/contentWrapper';
-import { fetchSkills } from '@/services/dataapi';
+import { fetchAboutPage } from '@/services/dataapi';
 import { toolsIcons } from '@/utils/icons';
+import moment from 'moment';
 
-const About = ({ skills }) => {
+const About = ({ skills, linkedin, github, socials, experiences }) => {
   return (
-    <Container title="About | Amar Gupta">
+    <Container title="About | Amar Gupta" socials={socials}>
       <ContentWrapper>
         <AboutHeading />
         <Skills skills={skills} />
-        <ExperienceHeading/>
-        <Contact />
+        <ExperienceHeading experiences={experiences} />
+        <Contact linkedin={linkedin} github={github} />
       </ContentWrapper>
     </Container>
   );
@@ -58,7 +57,7 @@ const AboutHeading = () => {
     </Box>
   );
 };
-const ExperienceHeading = () => {
+const ExperienceHeading = ({ experiences }) => {
   return (
     <Box w="90%" alignSelf="center" as="section">
       <SectionHeading mb={{ base: '4rem', xl: '8rem' }}>
@@ -67,17 +66,40 @@ const ExperienceHeading = () => {
       <ChakraContainer maxW={{ base: '20rem', sm: '30rem', md: '40rem' }} p={0}>
         <Tabs align="start" orientation="vertical">
           <TabList>
-            <Tab>Les Transformations</Tab>
-            <Tab>LoudCloud Systems</Tab>
+            {experiences.map((data) => (
+              <Tab key={data.id}>{data.company}</Tab>
+            ))}
           </TabList>
-
           <TabPanels>
-            <TabPanel>
-              <p>one!</p>
-            </TabPanel>
-            <TabPanel>
-              <p>two!</p>
-            </TabPanel>
+            {experiences.map((data) => (
+              <TabPanel key={data.id}>
+                <Heading mb="0.5rem" as="h4" variant="h4">
+                  {data.jobTitle}
+                </Heading>
+                <Text>
+                  {data.title}&nbsp;-&nbsp;{data.as}
+                </Text>
+                <Text>
+                  {data.date.length > 1
+                    ? data.date.map((data2, index) =>
+                        index === 0
+                          ? `${moment(data2).format('MMM  YY')} -`
+                          : ` ${moment(data2).format('MMM  YY')}`
+                      )
+                    : `${moment(data.date[0]).format('MMM  YY')} - Present`}
+                  &nbsp;&nbsp;
+                  {data.duration
+                    ? `${data.duration}`
+                    : `${moment(data.date[0]).diff(
+                        moment(),
+                        'months',
+                        false
+                      )} mos`}
+                </Text>
+                <Text mb="0.5rem">{data.location}</Text>
+                <Text>{data.description}</Text>
+              </TabPanel>
+            ))}
           </TabPanels>
         </Tabs>
       </ChakraContainer>
@@ -152,7 +174,7 @@ const Skill = ({ name, icon, color }) => {
   );
 };
 
-const Contact = () => {
+const Contact = ({ linkedin, github }) => {
   const { themed } = useColorModeSwitcher();
   return (
     <Box id="contact" p={{ base: '1rem', md: 0 }} as="section">
@@ -207,11 +229,9 @@ const SectionHeading = ({ children, ...props }) => {
   );
 };
 export async function getStaticProps() {
-  const skills = await fetchSkills();
+  const props = await fetchAboutPage();
   return {
-    props: {
-      skills
-    }
+    props
   };
 }
 export default About;

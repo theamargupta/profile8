@@ -56,4 +56,4 @@ The same goes for when you want to make a pull request. Please ensure you're com
 
 ## Support
 
-If there is anything you're unsure of or need clarity on, please don't hesitate to ask. I'd be more than happy to help! You can reach me via [email](gregogun97@gmail.com) or [discord](https://discord.gg/nsBtsHpR).
+If there is anything you're unsure of or need clarity on, please don't hesitate to ask. I'd be more than happy to help! You can reach me via [email](theamargupta.tech@gmail.com) or [discord](https://discord.gg/nsBtsHpR).

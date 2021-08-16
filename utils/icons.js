@@ -23,7 +23,11 @@ import {
   SiGit,
   SiGithub,
   SiStyledComponents,
-  SiAuth0
+  SiAuth0,
+  SiLinkedin,
+  SiFacebook,
+  SiGoogle,
+  SiInstagram
 } from 'react-icons/si';
 export const toolsIcons = {
   SiHtml5,
@@ -50,6 +54,9 @@ export const toolsIcons = {
   SiGit,
   SiGithub,
   SiStyledComponents,
-  SiAuth0
+  SiAuth0,
+  SiLinkedin,
+  SiFacebook,
+  SiGoogle,
+  SiInstagram
 };
-
