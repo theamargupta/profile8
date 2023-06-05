@@ -1,61 +1,70 @@
-# Portfolio V2
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is the 2nd and most recent version of my personal site which I am currently building with Next.js, Chakra UI and Storybook.
+## Available Scripts
 
-If you're interested, you can watch me build it live [here](https://www.youtube.com/channel/UCQDUHOvgodaEqjHm9Ihn87w)
+In the project directory, you can run:
 
-**LIVE LINK** - amargupta.tech/
+### `npm start`
 
-This project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Running the project locally
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Clone the project locally
+### `npm test`
 
-From the repo: 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `git clone`
+### `npm run build`
 
-- Installs dependencies required for the app to run in development mode.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-On the command line or in the terminal of your preferred editor, you can run: 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```bash
-npm install
-# or
-yarn 
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Fire up the development server by running:
+### `npm run eject`
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Dependencies
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- [React](https://reactjs.org/)
-- [React-DOM](https://www.npmjs.com/package/react-dom)
-- [Chakra UI](https://chakra-ui.com/)
-- [Storybook](https://storybook.js.org/)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/)
-- [Checkly](https://www.checklyhq.com/)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## Learn More
 
-If you're interested in contributing, or just interested in the main tools I'm using, you can check them out via the links below.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- [Next.js Docs](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Chakra UI Docs](https://chakra-ui.com/docs/getting-started) - learn about Chakra UI features and API.
-- [Storybook Docs](https://storybook.js.org/docs/react/get-started/introduction) - learn about Storybook features and API.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
