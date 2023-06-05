@@ -3,7 +3,7 @@ import locationicon from "assets/locationicon.svg";
 const Contact = () => {
   return (
     <section id="contact" class="contact">
-      <div class="container">
+      <div class="mx-auto max-w-[107rem] px-16">
         <div class="contact__content">
           <div class="contact__title">
             <p>contact</p>

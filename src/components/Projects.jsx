@@ -61,7 +61,7 @@ const ProjectItem = ({
 const Projects = () => {
   return (
     <section id="projects" className="project">
-      <div className="container">
+      <div class="mx-auto max-w-[107rem] px-16">
         <div className="project-content">
           <p>portfolio</p>
           <h3>Each project is a unique piece of development 🧩</h3>

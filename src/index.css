@@ -16,11 +16,11 @@
     font-family: Poppins, sans-serif;
     position: relative;
   }
-  .container {
+  /* .container {
     margin: 0 auto;
     max-width: 107rem;
     padding: 0 4rem;
-  }
+  } */
   * {
     scrollbar-color: #8e8e8e #fff;
     scrollbar-width: thin;
@@ -46,68 +46,14 @@
   ::-webkit-scrollbar-thumb:active {
     background-color: #8e8e8e;
   }
-  .mobile-menu {
-    cursor: pointer;
-    display: none;
-    font-size: 2.3rem;
-  }
-  .mobile-menu:hover {
-    color: #147efb;
-    transition: all .3s;
-  }
+
   @media (max-width: 900px) {
     .mobile-menu {
       display: flex;
     }
   }
-  .closed-menu {
-    left: -100% !important;
-  }
-  .open-menu {
-    left: 0 !important;
-  }
-  .mobile-nav {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    left: 0;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    transition: all .3s ease-in-out;
-    width: 100%;
-    z-index: 300;
-  }
-  .mobile-nav span {
-    cursor: pointer;
-    font-size: 3.3rem;
-    position: absolute;
-    right: 4rem;
-    top: 2rem;
-  }
-  .mobile-nav span:hover {
-    color: #147efb;
-    transition: all .3s;
-  }
-  .mobile-nav ul {
-    display: flex;
-    flex-direction: column;
-    font-size: 2.3rem;
-    gap: 4rem;
-    list-style: none;
-  }
-  .mobile-nav ul a {
-    color: #000;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  .mobile-nav ul a:hover {
-    color: #147efb;
-    transition: all .3s;
-  }
-  nav {
+
+nav {
     align-items: center;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.09);
@@ -145,7 +91,7 @@
   }
   nav ul a:hover {
     color: #147efb;
-  }
+  } 
   .logo {
     color: #2d2e32;
     cursor: pointer;

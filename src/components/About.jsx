@@ -4,7 +4,7 @@ import text2 from "assets/text2.3d5aa6ba2d0632bb4e0572631c3f9dc2.svg";
 const About = () => {
   return (
     <section class="about" id="about">
-    <div class="container">
+    <div class="mx-auto max-w-[107rem] px-16">
       <div class="about-content">
         <div class="img-side">
           <img src={workingEmoji} alt="emoji" class="work-emoji" />

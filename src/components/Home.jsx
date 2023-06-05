@@ -4,9 +4,10 @@ import css3 from "assets/css3.9cecabbf6ce67609c48bc4f280a11002.svg";
 import javascript from "assets/javascript.de4c2594613e34b15666206bbede7327.svg";
 import react from "assets/react.afac9c43724070bf6674f2692b7356a9.svg";
 import tailwind from "assets/tailwind.79614a5f61617ba49a0891494521226b.svg";
-import scss from "assets/scss.67cd0525916c4cdea4eb3abd8ae11137.svg";
+import materialui from "assets/materialui.svg";
 import linkedin from "assets/linkedin.svg";
 import github from "assets/github.svg";
+import redux from "assets/redux.svg";
 
 const HeroText = ({ title, description, linkedinURL, githubURL }) => {
   return (
@@ -60,13 +61,14 @@ const Hero = () => {
     { icon: css3, title: "CSS3" },
     { icon: javascript, title: "JavaScript" },
     { icon: react, title: "React" },
+    { icon: redux, title: "Redux" },
     { icon: tailwind, title: "Tailwind CSS" },
-    { icon: scss, title: "SCSS" },
+    { icon: materialui, title: "Material Ui" },
   ];
 
   return (
     <section id="home" className="hero">
-      <div className="container">
+      <div class="mx-auto max-w-[107rem] px-16">
         <div className="content">
           <div className="hero-main">
             <HeroText
