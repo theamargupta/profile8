@@ -88,13 +88,13 @@ const ExperienceHeading = ({ experiences }) => {
                       )
                     : `${moment(data.date[0]).format('MMM  YY')} - Present`}
                   &nbsp;&nbsp;
-                  {data.duration
+                  {/* {data.duration
                     ? `${data.duration}`
                     : `${moment(data.date[0]).diff(
                         moment(),
                         'months',
                         false
-                      )} mos`}
+                      )} mos`} */}
                 </Text>
                 <Text mb="0.5rem">{data.location}</Text>
                 <Text>{data.description}</Text>

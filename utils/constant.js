@@ -187,6 +187,17 @@ export const varriable = {
   experiences: [
     {
       id: 'cl3bftclk2e6w0czshoxbopjz',
+      title: 'React Web Developer & Deployment Specialist',
+      jobTitle: 'Frontend Developer',
+      company: 'Freelance, Delhi',
+      duration: null,
+      location: 'Delhi',
+      description: 'Responsible for building Single page applications',
+      as: 'Full Time WFH',
+      date: ['2022-08-01']
+    },
+    {
+      id: 'cl3bftclk2e6w0czshoxbopjz',
       title: 'Software Engineer',
       jobTitle: 'Frontend Developer',
       company: 'Spark Eighteen Pvt Ltd',
@@ -194,7 +205,7 @@ export const varriable = {
       location: 'Delhi',
       description: 'Responsible for building Single page applications',
       as: 'Full Time WFH',
-      date: ['2021-12-01']
+      date: ['2021-12-01', '2022-08-01']
     },
     {
       id: 'ckrylir80gv5s0b93hvtwk22m',
@@ -206,7 +217,7 @@ export const varriable = {
       description:
         'Responsible for building Single page applications and websites using React/Redux and in Vue',
       as: 'Full-time WFH',
-      date: ['2020-12-01']
+      date: ['2020-12-01','2021-10-01']
     },
     {
       id: 'ckseacfkgd5sz0c81ng8o8y5l',
