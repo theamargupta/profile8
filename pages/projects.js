@@ -40,22 +40,25 @@ const ProjectList = ({ projects }) => {
     <List
       mx="auto"
       justifyContent="space-between"
-      display={{ base: 'block', 'xl': 'flex' }}
+      display={{ base: 'block', xl: 'flex' }}
       flexWrap="wrap"
     >
-      {projects.map((project) => (
-        <ProjectCard
-          mb="8rem"
-          logo={project.logo}
-          title={project.title}
-          description={project.description}
-          tools={project.tools}
-          live={project.live}
-          proto={project.proto}
-          repo={project.repo}
-          key={project.id}
-        />
-      ))}
+      {projects.map(
+        (project) =>
+          project?.title && (
+            <ProjectCard
+              mb="8rem"
+              logo={project.logo}
+              title={project.title}
+              description={project.description}
+              tools={project.tools}
+              live={project.live}
+              proto={project.proto}
+              repo={project.repo}
+              key={project.id}
+            />
+          )
+      )}
     </List>
   );
 };
