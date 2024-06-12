@@ -167,21 +167,24 @@ const Projects = ({ projects }) => {
     <List
       mx="auto"
       justifyContent="space-between"
-      display={{ base: 'block', '2xl': 'flex' }}
+      display={{ base: 'block', 'xl': 'flex' }}
     >
-      {projects.map((project) => (
-        <ProjectCard
-          data-testid="project-card"
-          logo={project.logo}
-          title={project.title}
-          description={project.description}
-          tools={project.tools}
-          live={project.live}
-          proto={project.proto}
-          repo={project.repo}
-          key={project.id}
-        />
-      ))}
+      {projects.map(
+        (project) =>
+          project?.title && (
+            <ProjectCard
+              data-testid="project-card"
+              logo={project.logo}
+              title={project.title}
+              description={project.description}
+              tools={project.tools}
+              live={project.live}
+              proto={project.proto}
+              repo={project.repo}
+              key={project.id}
+            />
+          )
+      )}
     </List>
   );
 };
