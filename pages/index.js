@@ -27,7 +27,7 @@ export default function Homepage({ projects, socials }) {
     <Container socials={socials}>
       <ContentWrapper>
         <Hero />
-        <FeaturedProjects projects={projects} />
+        <FeaturedProjects projects={[projects[0], projects[1]]} />
         <Subscribe />
       </ContentWrapper>
     </Container>
@@ -167,7 +167,7 @@ const Projects = ({ projects }) => {
     <List
       mx="auto"
       justifyContent="space-between"
-      display={{ base: 'block', 'xl': 'flex' }}
+      display={{ base: 'block', xl: 'flex' }}
     >
       {projects.map(
         (project) =>

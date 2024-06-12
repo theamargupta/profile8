@@ -294,7 +294,7 @@ export const varriable = {
         }
       ],
       description: `Tech used-Emotion, React, Redux, Next.js, HSTS, Open Graph, Vercel, Chakra UI
-        Developed an e-commerce platform with React, Next.js, and Chakra UI, deployed on Heroku and Netlify, leveraging MongoDB for seamless user experiences.\n Enhanced security with HSTS, optimized SEO with Open Graph, and ensured smooth deployment with Vercel integration.\n Future enhancements include user authentication, payment gateway integration, and advanced search features.`,
+        Developed an Portfolio with React, Next.js, and Chakra UI, deployed on Heroku and Netlify, leveraging MongoDB for seamless user experiences.\n Enhanced security with HSTS, optimized SEO with Open Graph, and ensured smooth deployment with Vercel integration.\n Future enhancements include user authentication, payment gateway integration, and advanced search features.`,
       repo: 'https://github.com/theamargupta/profile8',
       live: 'https://www.amargupta.tech/',
       feature: true
