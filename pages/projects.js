@@ -40,7 +40,7 @@ const ProjectList = ({ projects }) => {
     <List
       mx="auto"
       justifyContent="space-between"
-      display={{ base: 'block', '2xl': 'flex' }}
+      display={{ base: 'block', 'xl': 'flex' }}
       flexWrap="wrap"
     >
       {projects.map((project) => (
