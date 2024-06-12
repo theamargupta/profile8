@@ -57,7 +57,7 @@ export const ProjectCard = ({
         <Heading data-testid="project-title" as="h3" variant="h3">
           {title}
         </Heading>
-        {description.split('\n').map((i, key) => {
+        {description?.split('\n')?.map((i, key) => {
           return (
             <Text style={{ marginTop: '12px' }} key={key}>
               {i}
@@ -65,7 +65,7 @@ export const ProjectCard = ({
           );
         })}
         <List display="flex" flexDirection="row">
-          {tools.map(({ id, name, icon, color }) => (
+          {tools?.map(({ id, name, icon, color }) => (
             <ListItem key={id} p="0.5rem">
               <Icon
                 aria-label={name}
@@ -99,10 +99,10 @@ export const ProjectCard = ({
 
 ProjectCard.propTypes = {
   logo: PropTypes.element,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  tools: PropTypes.array.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  tools: PropTypes.array,
   live: PropTypes.string,
   proto: PropTypes.string,
-  repo: PropTypes.string.isRequired
+  repo: PropTypes.string
 };

@@ -189,7 +189,7 @@ export const varriable = {
       id: 'cl3bftclk2e6w0czshoxbopjz',
       title: 'React Web Developer & Deployment Specialist',
       jobTitle: 'Frontend Developer',
-      company: 'Freelance, Delhi',
+      company: 'AJR Info Systems Pvt. Ltd',
       duration: null,
       location: 'Delhi',
       description: 'Responsible for building Single page applications',
@@ -217,7 +217,7 @@ export const varriable = {
       description:
         'Responsible for building Single page applications and websites using React/Redux and in Vue',
       as: 'Full-time WFH',
-      date: ['2020-12-01','2021-10-01']
+      date: ['2020-12-01', '2021-10-01']
     },
     {
       id: 'ckseacfkgd5sz0c81ng8o8y5l',
@@ -234,7 +234,7 @@ export const varriable = {
   projects: [
     {
       id: 'ckryl8nsogvxq0b91val16sd1',
-      title: 'Netflix',
+      title: 'Next Portfolio',
       tools: [
         {
           id: 'ckrykxbm8gu1e0b29cgknd5yk',
@@ -255,7 +255,7 @@ export const varriable = {
         {
           id: 'ckrzah3i0i62p0c863s4slx1p',
           name: 'Material Ui',
-          icon: 'SiMaterialUi',
+          icon: 'SiNextDotJs',
           color: {
             hex: '#007dc5'
           }
@@ -293,10 +293,10 @@ export const varriable = {
           }
         }
       ],
-      description:
-        'I have created this "NETFLIX-CLONE" using React.js, Auth0, Material-Ui and Redux-toolkit\n- User can login and signup .\n- User can see multiple rows of movies of different categories .\n- User can also watch the trailer of movie by clicking on it.\n- I have used axios to fetch all data of movies ',
-      repo: 'https://github.com/theamargupta/netflix-project-attainu',
-      live: 'https://amar-netflix.netlify.app/',
+      description: `Tech used-Emotion, React, Redux, Next.js, HSTS, Open Graph, Vercel, Chakra UI
+        Developed an e-commerce platform with React, Next.js, and Chakra UI, deployed on Heroku and Netlify, leveraging MongoDB for seamless user experiences.\n Enhanced security with HSTS, optimized SEO with Open Graph, and ensured smooth deployment with Vercel integration.\n Future enhancements include user authentication, payment gateway integration, and advanced search features.`,
+      repo: 'https://github.com/theamargupta/profile8',
+      live: 'https://www.amargupta.tech/',
       feature: true
     },
     {
@@ -349,6 +349,155 @@ export const varriable = {
       repo: 'https://github.com/theamargupta/usaecommerce',
       live: 'https://usa-ecommerce.netlify.app/',
       feature: true
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Vue Dashboard',
+      description:
+        'Crafted a sleek Vue.js dashboard using Vue 3, enhanced with custom CSS for unique visual appeal.\n Seamlessly integrated data visualization and user interaction, delivering an intuitive user experience.\n Engineered for scalability and performance, promising a responsive and dynamic interface.',
+      repo: 'https://github.com/theamargupta/vue-dash',
+      live: 'https://vue-dash-one.vercel.app/',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Interview Assignment Dashbaord',
+      description:
+        'Designed an interview assignment dashboard with Redux, React Router 6, and React, optimized as a Progressive Web App (PWA) for offline access.\n Seamlessly deployed on Vercel, styled with Tailwind CSS, and enhanced with Typescript for robust performance and maintainability.\n Delivers a seamless user experience with dynamic routing, state management, and responsive design.',
+      repo: 'https://github.com/theamargupta/interviewAssignmentDashbaord',
+      live: 'https://interview-assignment-dashbaord.vercel.app/',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Portfolio 7',
+      description:
+        'This is a portfolio website built using React, Node Sass, and styled-components. It showcases the skills, projects, and experiences of the developer. The website has a modern and responsive design, with smooth animations and transitions',
+      repo: 'https://github.com/theamargupta/profile7',
+      live: 'https://profile7.vercel.app/',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Google App Script',
+      description: '',
+      repo: 'https://github.com/theamargupta/google-react-app-script',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'SmallCase Clone',
+      description: 'smallcaseClone',
+      repo: 'https://github.com/theamargupta/smallcaseClone',
+      live: 'https://smallcase-clone-ten.vercel.app/',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Toys and Stationary E-commerce Website',
+      description:
+        'The Toys and Stationary E-commerce Website is an online platform designed for selling various toys and stationary items in an eco-friendly manner.\n The website is built using Next.js, React, and other libraries and technologies to provide a seamless and engaging shopping experience for users.',
+      repo: 'https://github.com/theamargupta/trendyandhandy',
+      live: 'https://trendyandhandy.vercel.app/',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: 'Kendo With Backend',
+      description:
+        'This is a toy project that showcases the integration of Kendo React components in a web application. The project includes both client-side and server-side implementations using various libraries and technologies.',
+      repo: 'https://github.com/theamargupta/KendoWithBackend',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
+    },
+    {
+      id: 'ckrylfipkguz90b93u2q265ma',
+      title: '',
+      description: '',
+      repo: '',
+      live: '',
+      feature: false
     }
   ]
 };
