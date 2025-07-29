@@ -4,6 +4,7 @@ import {
   Text,
   VStack,
   Box,
+  Center,
   useMediaQuery,
   Button,
   Link,
@@ -165,29 +166,233 @@ const ScrollArrow = ({ scrollPos }) => {
 
 const FeaturedProjects = ({ projects }) => {
   return (
-    <VStack spacing="4rem" w="100%" m="auto">
-      <FeatureHeading>Featured Projects</FeatureHeading>
-      <Flex
+    <Box w={{ base: '90%', '2xl': '100%' }}>
+      <VStack
+        spacing="4rem"
         w="100%"
-        mb="2.5rem"
-        direction={{ base: 'column', xl: 'row' }}
-        justify="space-evenly"
+        maxW="1200px"
+        m="auto"
+        px={{ base: '1rem', md: '2rem' }}
       >
-        <Projects projects={projects} />
-      </Flex>
-      <NextLink href="/projects" passHref>
-        <Button
-          as="a"
-          textTransform="capitalize"
-          display="block"
-          textAlign="center"
-          fontSize={{ base: 'lg', lg: 'xl' }}
-          variant="secondaryThemed"
+        <VStack spacing="2rem" textAlign="center">
+          <Heading
+            as="h2"
+            fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+            fontWeight="700"
+            letterSpacing="-0.02em"
+            color="purple.600"
+            _dark={{ color: 'purple.300' }}
+          >
+            PROJECTS
+          </Heading>
+          <Text
+            fontSize={{ base: 'lg', md: 'xl' }}
+            maxW="600px"
+            color="gray.600"
+            _dark={{ color: 'gray.300' }}
+            lineHeight="1.6"
+          >
+            Here you will find some of the personal and client projects that I
+            created with each project containing its own case study
+          </Text>
+        </VStack>
+
+        <VStack spacing="8rem" w="100%">
+          {projects.map(
+            (project, index) =>
+              project?.title && (
+                <EnhancedProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                />
+              )
+          )}
+        </VStack>
+
+        <NextLink href="/projects" passHref>
+          <Button
+            as="a"
+            size="lg"
+            px="3rem"
+            py="1.5rem"
+            fontSize="lg"
+            fontWeight="600"
+            bg="purple.600"
+            color="white"
+            _hover={{ bg: 'purple.700', transform: 'translateY(-2px)' }}
+            _dark={{ bg: 'purple.500', _hover: { bg: 'purple.600' } }}
+            transition="all 0.3s ease"
+            borderRadius="md"
+          >
+            See All Projects
+          </Button>
+        </NextLink>
+      </VStack>
+    </Box>
+  );
+};
+
+const EnhancedProjectCard = ({ project, index }) => {
+  const isEven = index % 2 === 0;
+
+  return (
+    <Grid
+      templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
+      gap={{ base: '3rem', lg: '4rem' }}
+      alignItems="center"
+      w="100%"
+    >
+      {/* Project Image/Visual */}
+      <GridItem order={{ base: 1, lg: isEven ? 1 : 2 }}>
+        <Box
+          position="relative"
+          bg="gray.100"
+          borderRadius="lg"
+          overflow="hidden"
+          aspectRatio="16/10"
+          border="1px solid"
+          borderColor="gray.200"
+          _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
         >
-          See all projects
-        </Button>
-      </NextLink>
-    </VStack>
+          <Center
+            h="100%"
+            bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          >
+            {project.logo ? (
+              project.logo
+            ) : (
+              <VStack spacing="1rem">
+                <Heading
+                  color="white"
+                  fontSize={{ base: 'xl', md: '2xl' }}
+                  textAlign="center"
+                  px="2rem"
+                >
+                  {project.title}
+                </Heading>
+                <Box w="3rem" h="1px" bg="white" opacity="0.8" />
+              </VStack>
+            )}
+          </Center>
+        </Box>
+      </GridItem>
+
+      {/* Project Details */}
+      <GridItem order={{ base: 2, lg: isEven ? 2 : 1 }}>
+        <VStack align="flex-start" spacing="2rem">
+          <Heading
+            as="h3"
+            fontSize={{ base: '2xl', md: '3xl' }}
+            fontWeight="700"
+            color="gray.900"
+            _dark={{ color: 'white' }}
+          >
+            {project.title}
+          </Heading>
+
+          <Text
+            fontSize={{ base: 'md', md: 'lg' }}
+            lineHeight="1.7"
+            color="gray.600"
+            _dark={{ color: 'gray.300' }}
+          >
+            {project.description?.split('\n')[0] || project.description}
+          </Text>
+
+          {/* Tech Stack */}
+          {project.tools && project.tools.length > 0 && (
+            <Box>
+              <Text
+                fontSize="sm"
+                fontWeight="600"
+                color="gray.500"
+                _dark={{ color: 'gray.400' }}
+                mb="1rem"
+                textTransform="uppercase"
+                letterSpacing="0.1em"
+              >
+                Tech Stack
+              </Text>
+              <Flex wrap="wrap" gap="0.5rem">
+                {project.tools.slice(0, 6).map((tool) => (
+                  <Box
+                    key={tool.id}
+                    px="0.75rem"
+                    py="0.25rem"
+                    bg="gray.100"
+                    borderRadius="md"
+                    fontSize="sm"
+                    fontWeight="500"
+                    border="1px solid"
+                    borderColor="gray.200"
+                    _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
+                  >
+                    {tool.name}
+                  </Box>
+                ))}
+              </Flex>
+            </Box>
+          )}
+
+          {/* Action Buttons */}
+          <HStack spacing="1rem" pt="1rem">
+            {project.live && (
+              <Button
+                as="a"
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                bg="purple.600"
+                color="white"
+                px="2rem"
+                py="1.5rem"
+                fontSize="md"
+                fontWeight="600"
+                transition="all 0.3s ease"
+                borderRadius="md"
+                _hover={{ bg: 'purple.700', transform: 'translateY(-1px)' }}
+                _dark={{
+                  bg: 'purple.500',
+                  _hover: { bg: 'purple.600' }
+                }}
+              >
+                Live Demo
+              </Button>
+            )}
+
+            {project.repo && (
+              <Button
+                as="a"
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                borderColor="purple.600"
+                color="purple.600"
+                px="2rem"
+                py="1.5rem"
+                fontSize="md"
+                fontWeight="600"
+                transition="all 0.3s ease"
+                borderRadius="md"
+                _hover={{
+                  bg: 'purple.50',
+                  transform: 'translateY(-1px)'
+                }}
+                _dark={{
+                  borderColor: 'purple.400',
+                  color: 'purple.400',
+                  _hover: { bg: 'purple.900' }
+                }}
+              >
+                View Code
+              </Button>
+            )}
+          </HStack>
+        </VStack>
+      </GridItem>
+    </Grid>
   );
 };
 
@@ -275,7 +480,9 @@ const FeatureHeading = ({ children }) => {
 const AboutHeading = () => {
   return (
     <Box>
-      <SectionHeading mb={{ base: '4rem', xl: '4rem' }}>Amar Gupta</SectionHeading>
+      <SectionHeading mb={{ base: '4rem', xl: '4rem' }}>
+        Amar Gupta
+      </SectionHeading>
       <Box>
         <Heading mb="1rem" as="h3" variant="h3">
           Get to know me!
