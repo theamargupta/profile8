@@ -8,25 +8,32 @@ import {
   Button,
   Link,
   List,
-  Icon
+  Icon,
+  HStack,
+  Grid,
+  GridItem,
+  Container as ChakraContainer
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Container from '@/layouts/container';
 import { HeroVisual } from '@/components/svg/heroVisual';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
+import useToggle from '@/utils/hooks/useToggle';
 import Subscribe from '@/components/subscribe';
 import { fetchHomePage } from '@/services/dataapi';
 import { ProjectCard } from '@/components/projectCard';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { css } from '@emotion/react';
 import { BsArrowDown } from 'react-icons/bs';
+import { toolsIcons } from '@/utils/icons';
 
-export default function Homepage({ projects, socials }) {
+export default function Homepage({ projects, socials, skills }) {
   return (
     <Container socials={socials}>
       <ContentWrapper>
         <Hero />
+        <About skills={skills} />
         <FeaturedProjects projects={[projects[0], projects[1]]} />
         <Subscribe />
       </ContentWrapper>
@@ -98,7 +105,29 @@ const Hero = () => {
     </Box>
   );
 };
-
+const About = ({ skills }) => {
+  return (
+    <Box w={{ base: '90%', '2xl': '100%' }}>
+      <Heading textAlign="center" as="h2" variant="h2" mb="4rem">
+        About
+      </Heading>
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        gap={{ base: '4rem', lg: '6rem' }}
+        align="flex-start"
+        justify="space-between"
+        mb="4rem"
+      >
+        <Box flex="1" maxW={{ lg: '48%' }}>
+          <AboutHeading />
+        </Box>
+        <Box flex="1" maxW={{ lg: '48%' }}>
+          <Skills skills={skills} />
+        </Box>
+      </Flex>
+    </Box>
+  );
+};
 const ScrollArrow = ({ scrollPos }) => {
   const { colorDark } = useColorModeSwitcher();
   return (
@@ -242,6 +271,153 @@ const FeatureHeading = ({ children }) => {
     </Heading>
   );
 };
+
+const AboutHeading = () => {
+  return (
+    <Box>
+      <SectionHeading mb={{ base: '4rem', xl: '4rem' }}>Amar Gupta</SectionHeading>
+      <Box>
+        <Heading mb="1rem" as="h3" variant="h3">
+          Get to know me!
+        </Heading>
+        <Text mb="1.5rem" fontSize="lg">
+          Hey there! I'm Amar, a self-taught developer fascinated by the
+          prospect of using technology to aid in creating a fairer, more
+          inclusive world.
+        </Text>
+        <Text mb="1.5rem" fontSize="lg">
+          I like to spend my time designing and building solutions, engaging
+          with the community, as well as pushing myself to learn more through
+          pair programming and group projects.
+        </Text>
+
+        <Heading mb="1rem" as="h3" variant="h3">
+          Development Philosophy
+        </Heading>
+        <Text mb="1.5rem" fontSize="lg">
+          I believe in writing clean, maintainable code that not only works well
+          but is also easy for other developers to understand and build upon. My
+          approach focuses on user-centric design, performance optimization, and
+          accessibility.
+        </Text>
+
+        <Heading mb="1rem" as="h3" variant="h3">
+          When I'm Not Coding
+        </Heading>
+        <Text mb="1.5rem" fontSize="lg">
+          You'll find me exploring new design patterns, reading tech blogs,
+          experimenting with the latest frameworks, or enjoying a good beer
+          while brainstorming the next big idea. I also love mentoring fellow
+          developers and sharing knowledge through community involvement.
+        </Text>
+      </Box>
+    </Box>
+  );
+};
+
+const Skills = ({ skills }) => {
+  return (
+    <Box as="section">
+      <SectionHeading mb={{ base: '4rem', xl: '4rem' }}>
+        My tools
+      </SectionHeading>
+      <Box mb="2rem">
+        <Text mb="2rem" fontSize="lg">
+          Here are some of the tools and technologies I use most frequently to
+          build modern web applications.
+        </Text>
+      </Box>
+      <Grid
+        templateColumns={{ base: 'repeat(3, 1fr)', md: 'repeat(4, 1fr)' }}
+        gap={4}
+        as="ul"
+      >
+        {skills.map((skill) => (
+          <Skill
+            name={skill.name}
+            icon={toolsIcons[`${skill.icon}`]}
+            color={skill.color?.hex}
+            key={skill.id}
+          />
+        ))}
+      </Grid>
+    </Box>
+  );
+};
+
+const Skill = ({ name, icon, color }) => {
+  const [hover, toggleHover] = useToggle();
+  return (
+    <GridItem
+      onMouseEnter={toggleHover}
+      onMouseLeave={toggleHover}
+      p="1rem"
+      textAlign="center"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      listStyleType="none"
+      as="li"
+    >
+      <Icon
+        mb="0.5rem"
+        boxSize={{ base: '2.5rem', lg: '3rem' }}
+        as={icon}
+        fill={color}
+        transitionDuration="500ms"
+        css={css`
+          animation: floatAnimation 3s ease-in-out infinite,
+            fadeInUp 0.6s ease-out;
+          animation-delay: ${Math.random() * 2}s, ${Math.random() * 0.5}s;
+
+          @keyframes floatAnimation {
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-8px);
+            }
+          }
+
+          @keyframes fadeInUp {
+            0% {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          &:hover {
+            animation-play-state: paused;
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+          }
+        `}
+      />
+      <Text fontSize="sm" fontWeight="medium">
+        {name}
+      </Text>
+    </GridItem>
+  );
+};
+
+const SectionHeading = ({ children, ...props }) => {
+  const { colorGrey } = useColorModeSwitcher();
+  return (
+    <HStack {...props} w="100%">
+      <Box flex="1" h="1px" bg={colorGrey} />
+      <Heading textAlign="center" px="1rem" as="h3" variant="h3">
+        {children}
+      </Heading>
+      <Box flex="1" h="1px" bg={colorGrey} />
+    </HStack>
+  );
+};
+
 export async function getStaticProps() {
   const props = await fetchHomePage();
   return {

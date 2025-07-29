@@ -2,57 +2,144 @@ import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import useToggle from '@/utils/hooks/useToggle';
 import { IconButton } from '@chakra-ui/button';
 import { useColorMode } from '@chakra-ui/color-mode';
-import { Box, Flex, HStack, VStack } from '@chakra-ui/layout';
+import { Box, Flex, HStack, VStack, Text } from '@chakra-ui/layout';
 import { IoMoon, IoSunnyOutline } from 'react-icons/io5';
 import { StyledLink } from '../styled/link';
+import { ContentWrapper } from '@/layouts/contentWrapper';
+import NextLink from 'next/link';
+import Image from 'next/image';
 
 export const Navbar = ({ isOpen, toggleIsOpen }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { colorDark } = useColorModeSwitcher();
   return (
-    <Flex
-      mb={isOpen ? { base: '1rem' } : { base: '4.5rem', lg: '6rem' }}
-      as="nav"
-      p="4"
-      justify="space-between"
-    >
-      <MenuButton toggleIsOpen={toggleIsOpen} />
-      {/* <NextLink href="/">
-      <Image src="https://bit.ly/sage-adebayo" layout='fill' alt="Segun Adebayo" />
-      </NextLink> */}
-      <HStack spacing={{ base: 0, md: 8 }}>
-        <Flex align="center" display={{ base: 'none', lg: 'flex' }} as="ul">
-          <Item variant="noStyle" href="/">
-            Home
-          </Item>
-          <Item variant="noStyle" href="/about">
-            About
-          </Item>
-          <Item variant="noStyle" href="/projects">
-            Projects
-          </Item>
-          <Item isExternal variant="noStyle" href="/AmarResume.pdf">
-            CV
-          </Item>
-        </Flex>
-        <IconButton
-          id="toggleTheme"
-          borderRadius="sm"
-          variant="icon"
-          onClick={toggleColorMode}
-          aria-label={
-            colorMode === 'light' ? 'Toggle dark mode' : 'Toggle light Mode'
-          }
-          icon={
-            colorMode === 'light' ? (
-              <IoMoon size="1.25rem" />
-            ) : (
-              <IoSunnyOutline size="1.25rem" />
-            )
-          }
-        />
-      </HStack>
-    </Flex>
+    <ContentWrapper>
+      <Box w={{ base: '90%', '2xl': '100%' }}>
+        <Flex
+          mb={isOpen ? { base: '1rem' } : { base: '4.5rem', lg: '6rem' }}
+          as="nav"
+          p="4"
+          justify="space-between"
+        >
+          <MenuButton toggleIsOpen={toggleIsOpen} />
+          
+          {/* Beautiful Logo Section */}
+          <NextLink href="/" passHref>
+            <Flex
+              as="a"
+              align="center"
+              gap={{ base: 3, md: 4 }}
+              cursor="pointer"
+              transition="all 0.3s ease-in-out"
+              _hover={{
+                transform: 'translateY(-2px)',
+                filter: 'brightness(1.1)',
+              }}
+              role="group"
+            >
+              <Box
+                position="relative"
+                borderRadius="full"
+                overflow="hidden"
+                boxShadow="lg"
+                transition="all 0.3s ease-in-out"
+                _groupHover={{
+                  boxShadow: 'xl',
+                  transform: 'scale(1.05)',
+                }}
+              >
+                <Image
+                  src="https://i.ibb.co/cXpccm8Z/www-linkedin-com-in-theamargupta-1.png"
+                  width={60}
+                  height={60}
+                  alt="Amar Gupta"
+                  style={{
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
+              
+              <VStack align="start" spacing={0} display={{ base: 'none', sm: 'flex' }}>
+                <Text
+                  fontFamily="heading"
+                  fontSize={{ base: 'lg', md: 'xl' }}
+                  fontWeight="bold"
+                  color={colorMode === 'light' ? 'primary.600' : 'primary.300'}
+                  lineHeight="1.2"
+                  transition="color 0.2s ease-in-out"
+                  _groupHover={{
+                    color: colorMode === 'light' ? 'primary.700' : 'primary.200',
+                  }}
+                >
+                  Amar Gupta
+                </Text>
+                <Text
+                  fontSize="sm"
+                  color={colorMode === 'light' ? 'neutral.600' : 'neutral.400'}
+                  fontWeight="medium"
+                  opacity={0.8}
+                  transition="opacity 0.2s ease-in-out"
+                  _groupHover={{
+                    opacity: 1,
+                  }}
+                >
+                  Developer & Creator
+                </Text>
+              </VStack>
+              
+              {/* Mobile version - name only */}
+              <Text
+                display={{ base: 'block', sm: 'none' }}
+                fontFamily="heading"
+                fontSize="lg"
+                fontWeight="bold"
+                color={colorMode === 'light' ? 'primary.600' : 'primary.300'}
+                transition="color 0.2s ease-in-out"
+                _groupHover={{
+                  color: colorMode === 'light' ? 'primary.700' : 'primary.200',
+                }}
+              >
+                Amar
+              </Text>
+            </Flex>
+          </NextLink>
+
+          <HStack spacing={{ base: 0, md: 8 }}>
+            <Flex align="center" display={{ base: 'none', lg: 'flex' }} as="ul">
+              <Item variant="noStyle" href="/">
+                Home
+              </Item>
+              <Item variant="noStyle" href="/about">
+                About
+              </Item>
+              <Item variant="noStyle" href="/projects">
+                Projects
+              </Item>
+              <Item isExternal variant="noStyle" href="/AmarResume.pdf">
+                CV
+              </Item>
+            </Flex>
+            <IconButton
+              id="toggleTheme"
+              borderRadius="sm"
+              variant="icon"
+              onClick={toggleColorMode}
+              aria-label={
+                colorMode === 'light' ? 'Toggle dark mode' : 'Toggle light Mode'
+              }
+              icon={
+                colorMode === 'light' ? (
+                  <IoMoon size="1.25rem" />
+                ) : (
+                  <IoSunnyOutline size="1.25rem" />
+                )
+              }
+            />
+          </HStack>
+        </Flex>{' '}
+      </Box>
+    </ContentWrapper>
   );
 };
 
@@ -73,7 +160,7 @@ export const MobileNavMenu = () => {
           Blog
         </Item>
         <Item spacing={4} variant="large" href="/AmarResume.pdf">
-        CV
+          CV
         </Item>
       </VStack>
       <VStack p={4} w="100%" my={8} spacing={8} as="ul">

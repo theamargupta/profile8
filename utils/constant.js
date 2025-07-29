@@ -55,7 +55,7 @@ export const varriable = {
     {
       id: 'ckrykyac8gv600b91lg03bv5m',
       name: 'Next.js',
-      icon: 'SiNextDotJs',
+      icon: 'SiNextdotjs',
       color: null
     },
     {
@@ -85,7 +85,7 @@ export const varriable = {
     {
       id: 'ckryrled4h78i0b29x6sqwczq',
       name: 'Nuxt.js',
-      icon: 'SiNuxtDotJs',
+      icon: 'SiNuxtdotjs',
       color: {
         hex: '#00bd85'
       }
@@ -93,7 +93,7 @@ export const varriable = {
     {
       id: 'ckryrmemoh8ds0b91f5md9ndq',
       name: 'Vue.js',
-      icon: 'SiVueDotJs',
+      icon: 'SiVuedotjs',
       color: {
         hex: '#3fb27f'
       }
@@ -101,7 +101,7 @@ export const varriable = {
     {
       id: 'ckrza18igi4p50b93yes7tpgw',
       name: 'Vuex',
-      icon: 'SiVueDotJs',
+      icon: 'SiVuedotjs',
       color: {
         hex: '#3fb984'
       }
@@ -117,7 +117,7 @@ export const varriable = {
     {
       id: 'ckrzah3i0i62p0c863s4slx1p',
       name: 'Material Ui',
-      icon: 'SiMaterialUi',
+      icon: 'SiMui',
       color: {
         hex: '#007dc5'
       }
@@ -133,7 +133,7 @@ export const varriable = {
     {
       id: 'ckrzx3fuwj3ui0b2983s4fvai',
       name: 'Styled Components',
-      icon: 'SiStyledComponents',
+      icon: 'SiStyledcomponents',
       color: {
         hex: '#dd877a'
       }
@@ -144,6 +144,14 @@ export const varriable = {
       icon: 'SiAuth0',
       color: {
         hex: '#e45123'
+      }
+    },
+    {
+      id: 'cks2ulx88npb40c86fgc27582',
+      name: 'Tailwind CSS',
+      icon: 'SiTailwindcss',
+      color: {
+        hex: '#007dc5'
       }
     }
   ],
@@ -255,7 +263,7 @@ export const varriable = {
         {
           id: 'ckrzah3i0i62p0c863s4slx1p',
           name: 'Material Ui',
-          icon: 'SiNextDotJs',
+          icon: 'SiMui',
           color: {
             hex: '#007dc5'
           }
@@ -271,7 +279,7 @@ export const varriable = {
         {
           id: 'ckrzx3fuwj3ui0b2983s4fvai',
           name: 'Styled Components',
-          icon: 'SiStyledComponents',
+          icon: 'SiStyledcomponents',
           color: {
             hex: '#dd877a'
           }

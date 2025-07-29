@@ -33,7 +33,7 @@ const About = ({ skills, linkedin, github, socials, experiences }) => {
     </Container>
   );
 };
-const AboutHeading = () => {
+export const AboutHeading = () => {
   return (
     <Box>
       <Heading mb="6.5rem" w={{ base: '90%', sm: '100%' }} as="h1" variant="h1">
@@ -107,7 +107,7 @@ const ExperienceHeading = ({ experiences }) => {
   );
 };
 
-const Skills = ({ skills }) => {
+export const Skills = ({ skills }) => {
   // convert object properties to array for mapping
   // const skills = Object.values(tool).slice(0, 12);
   return (
@@ -173,7 +173,7 @@ const Skill = ({ name, icon, color }) => {
     </GridItem>
   );
 };
-
+// SiNextdotjs
 const Contact = ({ linkedin, github }) => {
   const { themed } = useColorModeSwitcher();
   return (
