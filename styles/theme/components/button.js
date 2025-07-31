@@ -96,6 +96,6 @@ export const Button = {
   // The default `size` or `variant` values
   defaultProps: {
     size: 'md',
-    variant: 'primary'
+    variant: 'primaryThemed'
   }
 };

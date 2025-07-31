@@ -183,6 +183,7 @@ const FeaturedProjects = ({ projects }) => {
         <VStack spacing="2rem" textAlign="center">
           <Heading
             as="h2"
+            variant="h2"
             fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
             fontWeight="700"
             letterSpacing="-0.02em"
@@ -247,7 +248,6 @@ const EnhancedProjectCard = ({ project, index }) => {
       <GridItem order={{ base: 1, lg: isEven ? 1 : 2 }}>
         <Box
           position="relative"
-          bg="gray.100"
           borderRadius="lg"
           overflow="hidden"
           // aspectRatio="16/10"
@@ -269,10 +269,11 @@ const EnhancedProjectCard = ({ project, index }) => {
             ) : (
               <VStack spacing="1rem">
                 <Heading
-                  color="white"
                   fontSize={{ base: 'xl', md: '2xl' }}
                   textAlign="center"
                   px="2rem"
+                  as="h3"
+                  variant="h3"
                 >
                   {project.title}
                 </Heading>
@@ -287,11 +288,10 @@ const EnhancedProjectCard = ({ project, index }) => {
       <GridItem order={{ base: 2, lg: isEven ? 2 : 1 }}>
         <VStack align="flex-start" spacing="2rem">
           <Heading
-            as="h3"
             fontSize={{ base: '2xl', md: '3xl' }}
             fontWeight="700"
-            color="gray.900"
-            _dark={{ color: 'white' }}
+            as="h3"
+            variant="h3"
           >
             {project.title}
           </Heading>
@@ -354,7 +354,7 @@ const EnhancedProjectCard = ({ project, index }) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="outline"
+                variant="secondaryThemed"
                 px="2rem"
                 py="1.5rem"
                 fontSize="md"

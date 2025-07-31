@@ -6,18 +6,22 @@ export const fonts = {
 export const Heading = {
   sizes: null,
   variants: {
-    h1: {
-      textStyle: 'h1'
-    },
-    h2: {
-      textStyle: 'h2'
-    },
-    h3: {
-      textStyle: 'h3'
-    },
-    h4: {
-      textStyle: 'h4'
-    }
+    h1: (props) => ({
+      textStyle: 'h1',
+      color: props.colorMode === 'light' ? 'primary.500' : 'secondary.300'
+    }),
+    h2: (props) => ({
+      textStyle: 'h2',
+      color: props.colorMode === 'light' ? 'primary.400' : 'secondary.300'
+    }),
+    h3: (props) => ({
+      textStyle: 'h3',
+      color: props.colorMode === 'light' ? 'primary.300' : 'secondary.300'
+    }),
+    h4: (props) => ({
+      textStyle: 'h4',
+      color: props.colorMode === 'light' ? 'primary.200' : 'secondary.300'
+    })
   }
 };
 
