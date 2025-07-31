@@ -1,3 +1,186 @@
+// Skills data - centralized for reuse
+export const skills = [
+  {
+    id: 'HTML5',
+    name: 'HTML5',
+    icon: 'SiHtml5',
+    color: {
+      hex: '#e34f26'
+    }
+  },
+  {
+    id: 'CSS3',
+    name: 'CSS3',
+    icon: 'SiCss3',
+    color: {
+      hex: '#1572b6'
+    }
+  },
+  {
+    id: 'JavaScript',
+    name: 'JavaScript',
+    icon: 'SiJavascript',
+    color: {
+      hex: '#f7df1e'
+    }
+  },
+  {
+    id: 'Typescript',
+    name: 'Typescript',
+    icon: 'SiTypescript',
+    color: {
+      hex: '#3178c6'
+    }
+  },
+  {
+    id: 'React',
+    name: 'React',
+    icon: 'SiReact',
+    color: {
+      hex: '#61dafb'
+    }
+  },
+  {
+    id: 'Github',
+    name: 'Github',
+    icon: 'SiGithub',
+    color: null
+  },
+  {
+    id: 'Next',
+    name: 'Next.js',
+    icon: 'SiNextdotjs',
+    color: null
+  },
+  {
+    id: 'Firebase',
+    name: 'Firebase',
+    icon: 'SiFirebase',
+    color: {
+      hex: '#f7df1e'
+    }
+  },
+  {
+    id: 'Graphql',
+    name: 'Graphql',
+    icon: 'SiGraphql',
+    color: {
+      hex: '#de33a6'
+    }
+  },
+  {
+    id: 'Heroku',
+    name: 'Heroku',
+    icon: 'SiHeroku',
+    color: {
+      hex: '#430098'
+    }
+  },
+  {
+    id: 'Nuxt',
+    name: 'Nuxt.js',
+    icon: 'SiNuxtdotjs',
+    color: {
+      hex: '#00bd85'
+    }
+  },
+  {
+    id: 'Vue',
+    name: 'Vue.js',
+    icon: 'SiVuedotjs',
+    color: {
+      hex: '#3fb27f'
+    }
+  },
+  {
+    id: 'Vuex',
+    name: 'Vuex',
+    icon: 'SiVuedotjs',
+    color: {
+      hex: '#3fb984'
+    }
+  },
+  {
+    id: 'Redux',
+    name: 'Redux',
+    icon: 'SiRedux',
+    color: {
+      hex: '#764bbc'
+    }
+  },
+  {
+    id: 'Material',
+    name: 'Material Ui',
+    icon: 'SiMui',
+    color: {
+      hex: '#007dc5'
+    }
+  },
+  {
+    id: 'Netlify',
+    name: 'Netlify',
+    icon: 'SiNetlify',
+    color: {
+      hex: '#008ab5'
+    }
+  },
+  {
+    id: 'Styled',
+    name: 'Styled Components',
+    icon: 'SiStyledcomponents',
+    color: {
+      hex: '#dd877a'
+    }
+  },
+  {
+    id: 'Auth0',
+    name: 'Auth0',
+    icon: 'SiAuth0',
+    color: {
+      hex: '#e45123'
+    }
+  },
+  {
+    id: 'Tailwind',
+    name: 'Tailwind CSS',
+    icon: 'SiTailwindcss',
+    color: {
+      hex: '#007dc5'
+    }
+  },
+  {
+    id: 'Vercel',
+    name: 'Vercel',
+    icon: 'SiVercel',
+    color: {
+      hex: '#000000'
+    }
+  },
+  {
+    id: 'Bootstrap',
+    name: 'Bootstrap',
+    icon: 'SiBootstrap',
+    color: {
+      hex: '#563d7c'
+    }
+  },
+  {
+    id: 'Supabase',
+    name: 'Supabase',
+    icon: 'SiSupabase',
+    color: {
+      hex: '#34B27B'
+    }
+  }
+];
+
+// Helper function to get skills by IDs
+const getSkillsByIds = (skillIds) => {
+  return skillIds
+    .map((id) => skills.find((skill) => skill.id === id))
+    .filter(Boolean);
+};
+
 export const varriable = {
   linkedin: {
     href: 'https://www.linkedin.com/in/amar-gupta-2684a1157/'
@@ -5,156 +188,7 @@ export const varriable = {
   github: {
     href: 'https://github.com/theamargupta'
   },
-  skills: [
-    {
-      id: 'ckryhn6j4glg80c867ucy3rv3',
-      name: 'HTML5',
-      icon: 'SiHtml5',
-      color: {
-        hex: '#e34f26'
-      }
-    },
-    {
-      id: 'ckryktc3kgux70b91g7kit6m8',
-      name: 'CSS3',
-      icon: 'SiCss3',
-      color: {
-        hex: '#1572b6'
-      }
-    },
-    {
-      id: 'ckrykwcw8gtwi0b931k3oxb06',
-      name: 'JavaScript',
-      icon: 'SiJavascript',
-      color: {
-        hex: '#f7df1e'
-      }
-    },
-    {
-      id: 'ckrykwwyggv3w0b91dy3o9gax',
-      name: 'Typescript',
-      icon: 'SiTypescript',
-      color: {
-        hex: '#3178c6'
-      }
-    },
-    {
-      id: 'ckrykxbm8gu1e0b29cgknd5yk',
-      name: 'React',
-      icon: 'SiReact',
-      color: {
-        hex: '#61dafb'
-      }
-    },
-    {
-      id: 'ckrykxr1sgv5j0b91r1td4qlc',
-      name: 'Github',
-      icon: 'SiGithub',
-      color: null
-    },
-    {
-      id: 'ckrykyac8gv600b91lg03bv5m',
-      name: 'Next.js',
-      icon: 'SiNextdotjs',
-      color: null
-    },
-    {
-      id: 'ckryl8czsgutp0b29aau8epjs',
-      name: 'Firebase',
-      icon: 'SiFirebase',
-      color: {
-        hex: '#f7df1e'
-      }
-    },
-    {
-      id: 'ckrylbhncguxp0b292ppigqbh',
-      name: 'Graphql',
-      icon: 'SiGraphql',
-      color: {
-        hex: '#de33a6'
-      }
-    },
-    {
-      id: 'ckrylcy48gv5w0c86udrabt17',
-      name: 'Heroku',
-      icon: 'SiHeroku',
-      color: {
-        hex: '#430098'
-      }
-    },
-    {
-      id: 'ckryrled4h78i0b29x6sqwczq',
-      name: 'Nuxt.js',
-      icon: 'SiNuxtdotjs',
-      color: {
-        hex: '#00bd85'
-      }
-    },
-    {
-      id: 'ckryrmemoh8ds0b91f5md9ndq',
-      name: 'Vue.js',
-      icon: 'SiVuedotjs',
-      color: {
-        hex: '#3fb27f'
-      }
-    },
-    {
-      id: 'ckrza18igi4p50b93yes7tpgw',
-      name: 'Vuex',
-      icon: 'SiVuedotjs',
-      color: {
-        hex: '#3fb984'
-      }
-    },
-    {
-      id: 'ckrza278gi4q00b93pzy8w0ub',
-      name: 'Redux',
-      icon: 'SiRedux',
-      color: {
-        hex: '#764bbc'
-      }
-    },
-    {
-      id: 'ckrzah3i0i62p0c863s4slx1p',
-      name: 'Material Ui',
-      icon: 'SiMui',
-      color: {
-        hex: '#007dc5'
-      }
-    },
-    {
-      id: 'ckrzahxlci4yv0b93rv3yr97l',
-      name: 'Netlify',
-      icon: 'SiNetlify',
-      color: {
-        hex: '#008ab5'
-      }
-    },
-    {
-      id: 'ckrzx3fuwj3ui0b2983s4fvai',
-      name: 'Styled Components',
-      icon: 'SiStyledcomponents',
-      color: {
-        hex: '#dd877a'
-      }
-    },
-    {
-      id: 'cks2ulx88npb40c86fgc27581',
-      name: 'Auth0',
-      icon: 'SiAuth0',
-      color: {
-        hex: '#e45123'
-      }
-    },
-    {
-      id: 'cks2ulx88npb40c86fgc27582',
-      name: 'Tailwind CSS',
-      icon: 'SiTailwindcss',
-      color: {
-        hex: '#007dc5'
-      }
-    }
-  ],
+  skills,
   socials: [
     {
       id: 'ckse9o7nkd1c70b39p7e58cmu',
@@ -241,117 +275,56 @@ export const varriable = {
   ],
   projects: [
     {
-      id: 'ckryl8nsogvxq0b91val16sd1',
-      title: 'Next Portfolio',
-      tools: [
+      id: '1',
+      title: 'Devfrend Startup',
+      tools: getSkillsByIds([
+        'Next',
+        'Bootstrap',
+        'React',
+        'JavaScript',
+        'Supabase',
+        'Vercel'
+      ]),
+      description: `Devfrend Web Solutions is a high-velocity web development startup offering premium websites for just $99. Built using Next.js, Redux, and Styled Components, the platform delivers fast, SEO-optimized, mobile-friendly websites in just 1-2 days. With a focus on entrepreneurs, small businesses, and global startups, Devfrend streamlines development using efficient templates and modern tech to maintain quality while keeping costs low. Integrated with Auth0 for secure authentication and deployed via Vercel for blazing performance, Devfrend has served 500+ clients across the USA, UK, Australia, and Canada.`,
+      demoImg:
+        'https://i.ibb.co/B5FpV0gL/Screenshot-2025-07-31-at-3-20-33-PM.png',
+      live: 'http://devfrend.com/',
+      feature: true,
+      challenges: [
         {
-          id: 'ckrykxbm8gu1e0b29cgknd5yk',
-          name: 'React',
-          icon: 'SiReact',
-          color: {
-            hex: '#61dafb'
-          }
+          title: 'Rapid Development Pipeline',
+          solution: 'Implemented a streamlined template system with reusable components and automated deployment processes to deliver websites in 1-2 days.'
         },
         {
-          id: 'ckrza278gi4q00b93pzy8w0ub',
-          name: 'Redux',
-          icon: 'SiRedux',
-          color: {
-            hex: '#764bbc'
-          }
+          title: 'Cost-Effective Solutions',
+          solution: 'Optimized development workflow using efficient tech stack and templates to maintain $99 pricing while ensuring high quality.'
         },
         {
-          id: 'ckrzah3i0i62p0c863s4slx1p',
-          name: 'Material Ui',
-          icon: 'SiMui',
-          color: {
-            hex: '#007dc5'
-          }
-        },
-        {
-          id: 'ckrzahxlci4yv0b93rv3yr97l',
-          name: 'Netlify',
-          icon: 'SiNetlify',
-          color: {
-            hex: '#008ab5'
-          }
-        },
-        {
-          id: 'ckrzx3fuwj3ui0b2983s4fvai',
-          name: 'Styled Components',
-          icon: 'SiStyledcomponents',
-          color: {
-            hex: '#dd877a'
-          }
-        },
-        {
-          id: 'ckrykwcw8gtwi0b931k3oxb06',
-          name: 'JavaScript',
-          icon: 'SiJavascript',
-          color: {
-            hex: '#f7df1e'
-          }
-        },
-        {
-          id: 'cks2ulx88npb40c86fgc27581',
-          name: 'Auth0',
-          icon: 'SiAuth0',
-          color: {
-            hex: '#e45123'
-          }
+          title: 'Global Scalability',
+          solution: 'Leveraged Vercel\'s global CDN and Supabase for international client support across USA, UK, Australia, and Canada.'
         }
       ],
-      description: `Tech used-Emotion, React, Redux, Next.js, HSTS, Open Graph, Vercel, Chakra UI
-        Developed an Portfolio with React, Next.js, and Chakra UI, deployed on Heroku and Netlify, leveraging MongoDB for seamless user experiences.\n Enhanced security with HSTS, optimized SEO with Open Graph, and ensured smooth deployment with Vercel integration.\n Future enhancements include user authentication, payment gateway integration, and advanced search features.`,
-      repo: 'https://github.com/theamargupta/profile8',
-      live: 'https://www.amargupta.tech/',
-      feature: true
+      keyFeatures: [
+        'Lightning-fast website delivery (1-2 days)',
+        'Premium quality at $99 price point',
+        'SEO-optimized and mobile-responsive',
+        'Secure authentication system',
+        'Global CDN deployment',
+        'Template-based rapid development',
+        'Multi-region client support'
+      ],
+      architecture: 'Built with Next.js for server-side rendering and optimal performance, integrated with Supabase for backend services and authentication, deployed on Vercel for global accessibility and speed.'
     },
     {
       id: 'ckrylfipkguz90b93u2q265ma',
       title: "Amar's Ecommerce ",
-      tools: [
-        {
-          id: 'ckrykwcw8gtwi0b931k3oxb06',
-          name: 'JavaScript',
-          icon: 'SiJavascript',
-          color: {
-            hex: '#f7df1e'
-          }
-        },
-        {
-          id: 'ckrykxbm8gu1e0b29cgknd5yk',
-          name: 'React',
-          icon: 'SiReact',
-          color: {
-            hex: '#61dafb'
-          }
-        },
-        {
-          id: 'ckrylbhncguxp0b292ppigqbh',
-          name: 'Graphql',
-          icon: 'SiGraphql',
-          color: {
-            hex: '#de33a6'
-          }
-        },
-        {
-          id: 'ckrylcy48gv5w0c86udrabt17',
-          name: 'Heroku',
-          icon: 'SiHeroku',
-          color: {
-            hex: '#430098'
-          }
-        },
-        {
-          id: 'ckrzahxlci4yv0b93rv3yr97l',
-          name: 'Netlify',
-          icon: 'SiNetlify',
-          color: {
-            hex: '#008ab5'
-          }
-        }
-      ],
+      tools: getSkillsByIds([
+        'JavaScript', // JavaScript
+        'React', // React
+        'Graphql', // Graphql
+        'Heroku', // Heroku
+        'Netlify' // Netlify
+      ]),
       description:
         'I made this ecommerce with backend which is deployed on Heroku and frontend(React) deployed on Netlify.\nMongoDB as database\n\nSuggest me things i can create on it to add on ?\n\nWebsite Link => https://lnkd.in/e-pFQYm\nCms Link => https://lnkd.in/ewk43FV',
       repo: 'https://github.com/theamargupta/usaecommerce',
@@ -416,94 +389,6 @@ export const varriable = {
       description:
         'This is a toy project that showcases the integration of Kendo React components in a web application. The project includes both client-side and server-side implementations using various libraries and technologies.',
       repo: 'https://github.com/theamargupta/KendoWithBackend',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
-      live: '',
-      feature: false
-    },
-    {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: '',
-      description: '',
-      repo: '',
       live: '',
       feature: false
     }

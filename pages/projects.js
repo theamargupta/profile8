@@ -47,6 +47,7 @@ const ProjectList = ({ projects }) => {
         (project) =>
           project?.title && (
             <ProjectCard
+              id={project.id}
               mb="8rem"
               logo={project.logo}
               title={project.title}

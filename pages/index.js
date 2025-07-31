@@ -21,22 +21,28 @@ import Container from '@/layouts/container';
 import { HeroVisual } from '@/components/svg/heroVisual';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import useToggle from '@/utils/hooks/useToggle';
-import Subscribe from '@/components/subscribe';
 import { fetchHomePage } from '@/services/dataapi';
-import { ProjectCard } from '@/components/projectCard';
 import { ContentWrapper } from '@/layouts/contentWrapper';
 import { css } from '@emotion/react';
 import { BsArrowDown } from 'react-icons/bs';
 import { toolsIcons } from '@/utils/icons';
+import Image from 'next/image';
+import ContactForm from '@/components/contactForm';
 
-export default function Homepage({ projects, socials, skills }) {
+export default function Homepage({
+  projects,
+  socials,
+  skills,
+  linkedin,
+  github
+}) {
   return (
     <Container socials={socials}>
       <ContentWrapper>
         <Hero />
         <About skills={skills} />
         <FeaturedProjects projects={[projects[0], projects[1]]} />
-        <Subscribe />
+        <Contact linkedin={linkedin} github={github} />
       </ContentWrapper>
     </Container>
   );
@@ -94,7 +100,7 @@ const Hero = () => {
             Feel free to have a look around, and learn more about myself and
             what I like to work on.{' '}
           </Text>
-          <NextLink href="/about#contact" passHref>
+          <NextLink href="/#contact" passHref>
             <Button as="a" variant="primaryThemed" size="lg">
               Get in touch
             </Button>
@@ -180,8 +186,6 @@ const FeaturedProjects = ({ projects }) => {
             fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
             fontWeight="700"
             letterSpacing="-0.02em"
-            color="purple.600"
-            _dark={{ color: 'purple.300' }}
           >
             PROJECTS
           </Heading>
@@ -218,10 +222,6 @@ const FeaturedProjects = ({ projects }) => {
             py="1.5rem"
             fontSize="lg"
             fontWeight="600"
-            bg="purple.600"
-            color="white"
-            _hover={{ bg: 'purple.700', transform: 'translateY(-2px)' }}
-            _dark={{ bg: 'purple.500', _hover: { bg: 'purple.600' } }}
             transition="all 0.3s ease"
             borderRadius="md"
           >
@@ -250,17 +250,22 @@ const EnhancedProjectCard = ({ project, index }) => {
           bg="gray.100"
           borderRadius="lg"
           overflow="hidden"
-          aspectRatio="16/10"
+          // aspectRatio="16/10"
           border="1px solid"
           borderColor="gray.200"
           _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
         >
           <Center
             h="100%"
-            bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            // bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
           >
-            {project.logo ? (
-              project.logo
+            {project.demoImg ? (
+              <Image
+                src={project.demoImg}
+                alt={project.title}
+                height={'400px'}
+                width={'700px'}
+              />
             ) : (
               <VStack spacing="1rem">
                 <Heading
@@ -315,21 +320,15 @@ const EnhancedProjectCard = ({ project, index }) => {
                 Tech Stack
               </Text>
               <Flex wrap="wrap" gap="0.5rem">
-                {project.tools.slice(0, 6).map((tool) => (
-                  <Box
-                    key={tool.id}
-                    px="0.75rem"
-                    py="0.25rem"
-                    bg="gray.100"
-                    borderRadius="md"
-                    fontSize="sm"
-                    fontWeight="500"
-                    border="1px solid"
-                    borderColor="gray.200"
-                    _dark={{ bg: 'gray.700', borderColor: 'gray.600' }}
-                  >
-                    {tool.name}
-                  </Box>
+                {project.tools.map(({ id, name, icon, color }) => (
+                  <Icon
+                    key={id}
+                    aria-label={name}
+                    transitionDuration="300ms"
+                    boxSize="2rem"
+                    as={toolsIcons[icon]}
+                    fill={color?.hex}
+                  />
                 ))}
               </Flex>
             </Box>
@@ -337,143 +336,39 @@ const EnhancedProjectCard = ({ project, index }) => {
 
           {/* Action Buttons */}
           <HStack spacing="1rem" pt="1rem">
+            <NextLink href={`/project/${project.id}`} passHref>
+              <Button
+                px="2rem"
+                py="1.5rem"
+                fontSize="md"
+                fontWeight="600"
+                transition="all 0.3s ease"
+                borderRadius="md"
+              >
+                Case Study
+              </Button>
+            </NextLink>
             {project.live && (
               <Button
                 as="a"
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                bg="purple.600"
-                color="white"
-                px="2rem"
-                py="1.5rem"
-                fontSize="md"
-                fontWeight="600"
-                transition="all 0.3s ease"
-                borderRadius="md"
-                _hover={{ bg: 'purple.700', transform: 'translateY(-1px)' }}
-                _dark={{
-                  bg: 'purple.500',
-                  _hover: { bg: 'purple.600' }
-                }}
-              >
-                Live Demo
-              </Button>
-            )}
-
-            {project.repo && (
-              <Button
-                as="a"
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
                 variant="outline"
-                borderColor="purple.600"
-                color="purple.600"
                 px="2rem"
                 py="1.5rem"
                 fontSize="md"
                 fontWeight="600"
                 transition="all 0.3s ease"
                 borderRadius="md"
-                _hover={{
-                  bg: 'purple.50',
-                  transform: 'translateY(-1px)'
-                }}
-                _dark={{
-                  borderColor: 'purple.400',
-                  color: 'purple.400',
-                  _hover: { bg: 'purple.900' }
-                }}
               >
-                View Code
+                View Live
               </Button>
             )}
           </HStack>
         </VStack>
       </GridItem>
     </Grid>
-  );
-};
-
-const Projects = ({ projects }) => {
-  return (
-    <List
-      mx="auto"
-      justifyContent="space-between"
-      display={{ base: 'block', xl: 'flex' }}
-    >
-      {projects.map(
-        (project) =>
-          project?.title && (
-            <ProjectCard
-              data-testid="project-card"
-              logo={project.logo}
-              title={project.title}
-              description={project.description}
-              tools={project.tools}
-              live={project.live}
-              proto={project.proto}
-              repo={project.repo}
-              key={project.id}
-            />
-          )
-      )}
-    </List>
-  );
-};
-
-const FeaturedArticles = () => {
-  return (
-    <VStack spacing="4rem" w="100%" mx="auto">
-      <FeatureHeading>Featured Articles</FeatureHeading>
-      <ArticleCard />
-      <ArticleCard />
-      <NextLink href="/blog" passHref>
-        <Link
-          display="block"
-          textAlign="center"
-          fontSize={{ base: 'lg', lg: '2xl' }}
-        >
-          Read all articles
-        </Link>
-      </NextLink>
-    </VStack>
-  );
-};
-
-export const ArticleCard = () => {
-  const { colorGrey } = useColorModeSwitcher();
-  return (
-    <Box
-      mx="auto"
-      p="2rem"
-      border="2px solid"
-      borderColor={colorGrey}
-      w={{ base: '21em', lg: '57.5rem' }}
-    >
-      <Heading textTransform="capitalize" as="h4" variant="h4" mb="0.5rem">
-        A heading for my amazing blog post
-      </Heading>
-      <Text variant="body" mb="2rem">
-        This is some arbitrary subtitle for my amazing blog post that you should
-        most definitely read!
-      </Text>
-      <Flex>
-        <Text>Read more</Text>
-        <Text>
-          <span>→</span>
-        </Text>
-      </Flex>
-    </Box>
-  );
-};
-
-const FeatureHeading = ({ children }) => {
-  return (
-    <Heading textAlign="center" as="h2" variant="h2">
-      {children}
-    </Heading>
   );
 };
 
@@ -624,7 +519,47 @@ const SectionHeading = ({ children, ...props }) => {
     </HStack>
   );
 };
-
+const Contact = ({ linkedin, github }) => {
+  const { themed } = useColorModeSwitcher();
+  return (
+    <Box id="contact" p={{ base: '1rem', md: 0 }} as="section">
+      <SectionHeading mb="4rem">Get in touch</SectionHeading>
+      <Flex
+        borderRadius="md"
+        direction={{ base: 'column', xl: 'row' }}
+        m="auto"
+        p="4rem"
+      >
+        <ChakraContainer
+          m={{ base: '0 0 4rem 0', xl: '0 4rem 0 0' }}
+          maxW="20rem"
+          p={0}
+        >
+          <Text mb="1rem" variant="preTitle">
+            Let's chat!
+          </Text>
+          <Text mb="2rem">
+            If you have any questions, opportunities or would just like to say
+            hey then feel free to fill out my contact form and I'll endeavour to
+            get back to you as soon as I can.
+          </Text>
+          <Text>
+            Or if you would prefer to, you can also reach me on{' '}
+            <Link color={themed} href={linkedin?.href}>
+              linkedin
+            </Link>{' '}
+            {`and `}
+            <Link color={themed} href={github?.href}>
+              github
+            </Link>
+            .
+          </Text>
+        </ChakraContainer>
+        <ContactForm />
+      </Flex>
+    </Box>
+  );
+};
 export async function getStaticProps() {
   const props = await fetchHomePage();
   return {

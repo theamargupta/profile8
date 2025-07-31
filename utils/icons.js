@@ -29,7 +29,10 @@ import {
   SiGoogle,
   SiInstagram,
   SiVuex,
-  SiTailwindcss
+  SiTailwindcss,
+  SiBootstrap,
+  SiVercel,
+  SiSupabase
 } from 'react-icons/si';
 export const toolsIcons = {
   SiHtml5,
@@ -62,5 +65,8 @@ export const toolsIcons = {
   SiGoogle,
   SiInstagram,
   SiVuex,
-  SiTailwindcss
+  SiTailwindcss,
+  SiBootstrap,
+  SiVercel,
+  SiSupabase
 };

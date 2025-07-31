@@ -13,9 +13,11 @@ import Icon from '@chakra-ui/icon';
 import { Button } from '@chakra-ui/button';
 import PropTypes from 'prop-types';
 import { toolsIcons } from '@/utils/icons';
+import NextLink from 'next/link';
 
 //-------------------------------------------
 export const ProjectCard = ({
+  id,
   logo,
   title,
   description,
@@ -72,25 +74,32 @@ export const ProjectCard = ({
                 transitionDuration="300ms"
                 boxSize="1.5rem"
                 as={toolsIcons[icon]}
-                _hover={{ fill: color.hex }}
+                _hover={{ fill: color?.hex }}
               />
             </ListItem>
           ))}
         </List>
-        <HStack pb="2rem">
+        <HStack pb="2rem" flexWrap="wrap" gap="0.5rem">
+          <NextLink href={`/project/${id}`} passHref>
+            <Button variant="primary">
+              Case Study
+            </Button>
+          </NextLink>
           {live && (
-            <Button as="a" href={live} variant="primary">
+            <Button as="a" href={live} target="_blank" rel="noopener noreferrer" variant="primary">
               Visit Site
             </Button>
           )}
           {proto && (
-            <Button as="a" href={proto} variant="primary">
+            <Button as="a" href={proto} target="_blank" rel="noopener noreferrer" variant="primary">
               Prototype
             </Button>
           )}
-          <Button as="a" href={repo} variant="secondary">
-            View Code
-          </Button>
+          {repo && (
+            <Button as="a" href={repo} target="_blank" rel="noopener noreferrer" variant="secondary">
+              View Code
+            </Button>
+          )}
         </HStack>
       </VStack>
     </Box>
@@ -98,6 +107,7 @@ export const ProjectCard = ({
 };
 
 ProjectCard.propTypes = {
+  id: PropTypes.string.isRequired,
   logo: PropTypes.element,
   title: PropTypes.string,
   description: PropTypes.string,
