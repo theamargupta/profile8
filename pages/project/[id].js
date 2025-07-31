@@ -53,7 +53,7 @@ const ProjectHeader = ({ project }) => {
   const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
 
   return (
-    <Box as="section" w={{ base: '90%', '2xl': '100%' }} mb="3rem">
+    <Box   w={{ base: '90%', '2xl': '100%' }} mb="3rem">
       <VStack spacing="2rem" align="start">
         <NextLink href="/projects" passHref>
           <Link fontSize="sm" fontWeight="500">

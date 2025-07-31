@@ -76,7 +76,7 @@ const Hero = () => {
   };
 
   return (
-    <Box w={{ base: '90%', '2xl': '100%' }}>
+    <Box as="section" w={{ base: '70%', md: '90%', '2xl': '100%' }}>
       <Flex mb="4rem" justify="space-between">
         <Box
           // m={!isXtraLarge && 'auto'}
@@ -114,7 +114,7 @@ const Hero = () => {
 };
 const About = ({ skills }) => {
   return (
-    <Box w={{ base: '90%', '2xl': '100%' }}>
+    <Box w={{ base: '70%', md: '90%', '2xl': '100%' }}>
       <Heading textAlign="center" as="h2" variant="h2" mb="4rem">
         About
       </Heading>
@@ -172,7 +172,7 @@ const ScrollArrow = ({ scrollPos }) => {
 
 const FeaturedProjects = ({ projects }) => {
   return (
-    <Box w={{ base: '90%', '2xl': '100%' }}>
+    <Box w={{ base: '70%', md: '90%', '2xl': '100%' }}>
       <VStack
         spacing="4rem"
         w="100%"
