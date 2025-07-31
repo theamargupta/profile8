@@ -171,6 +171,14 @@ export const skills = [
     color: {
       hex: '#34B27B'
     }
+  },
+  {
+    id: 'Google',
+    name: 'Google',
+    icon: 'SiGoogle',
+    color: {
+      hex: '#FF0000'
+    }
   }
 ];
 
@@ -293,15 +301,18 @@ export const varriable = {
       challenges: [
         {
           title: 'Rapid Development Pipeline',
-          solution: 'Implemented a streamlined template system with reusable components and automated deployment processes to deliver websites in 1-2 days.'
+          solution:
+            'Implemented a streamlined template system with reusable components and automated deployment processes to deliver websites in 1-2 days.'
         },
         {
           title: 'Cost-Effective Solutions',
-          solution: 'Optimized development workflow using efficient tech stack and templates to maintain $99 pricing while ensuring high quality.'
+          solution:
+            'Optimized development workflow using efficient tech stack and templates to maintain $99 pricing while ensuring high quality.'
         },
         {
           title: 'Global Scalability',
-          solution: 'Leveraged Vercel\'s global CDN and Supabase for international client support across USA, UK, Australia, and Canada.'
+          solution:
+            "Leveraged Vercel's global CDN and Supabase for international client support across USA, UK, Australia, and Canada."
         }
       ],
       keyFeatures: [
@@ -313,23 +324,99 @@ export const varriable = {
         'Template-based rapid development',
         'Multi-region client support'
       ],
-      architecture: 'Built with Next.js for server-side rendering and optimal performance, integrated with Supabase for backend services and authentication, deployed on Vercel for global accessibility and speed.'
+      architecture:
+        'Built with Next.js for server-side rendering and optimal performance, integrated with Supabase for backend services and authentication, deployed on Vercel for global accessibility and speed.'
     },
     {
-      id: 'ckrylfipkguz90b93u2q265ma',
-      title: "Amar's Ecommerce ",
+      id: '2',
+      title: 'InvenSync360',
       tools: getSkillsByIds([
-        'JavaScript', // JavaScript
-        'React', // React
-        'Graphql', // Graphql
-        'Heroku', // Heroku
-        'Netlify' // Netlify
+        'Next',
+        'React',
+        'Tailwind',
+        'JavaScript',
+        'Google',
+        'Vercel'
       ]),
-      description:
-        'I made this ecommerce with backend which is deployed on Heroku and frontend(React) deployed on Netlify.\nMongoDB as database\n\nSuggest me things i can create on it to add on ?\n\nWebsite Link => https://lnkd.in/e-pFQYm\nCms Link => https://lnkd.in/ewk43FV',
-      repo: 'https://github.com/theamargupta/usaecommerce',
-      live: 'https://usa-ecommerce.netlify.app/',
-      feature: true
+      description: `InvenSync360 is a modern, real-time inventory and billing automation tool designed for small and medium-sized businesses. Built with Next.js, React, and TailwindCSS, it offers seamless inventory tracking, customer/vendor management, PDF billing, and Google Sheets integration. Featuring a sleek analytics dashboard and secure login system via NextAuth, it's optimized for speed, usability, and instant deployment.`,
+      demoImg:
+        'https://i.ibb.co/Dg7PJD41/Screenshot-2025-07-31-at-3-27-03-PM.png',
+      live: 'https://inven-sync360.vercel.app/',
+      feature: true,
+      challenges: [
+        {
+          title: 'Real-Time Data Sync',
+          solution:
+            'Integrated Google Sheets API for two-way real-time synchronization with external spreadsheets, eliminating manual data exports.'
+        },
+        {
+          title: 'Professional Billing & Reporting',
+          solution:
+            'Used jsPDF and AutoTable to create downloadable PDFs for invoices and purchase orders with clean formatting.'
+        },
+        {
+          title: 'Dynamic Analytics Dashboard',
+          solution:
+            'Built reusable hooks and state logic to compute real-time metrics like revenue, profit, inventory cost, and pending payments.'
+        }
+      ],
+      keyFeatures: [
+        'Real-time inventory and billing dashboard',
+        'Two-way Google Sheets sync',
+        'Customer and vendor management',
+        'Sales and purchase invoicing with PDF export',
+        'Analytics: revenue, profit, expenses, and stock value',
+        'NextAuth-powered secure login system',
+        'Responsive UI with TailwindCSS'
+      ],
+      architecture:
+        'Built using the Next.js App Router with React and TailwindCSS, integrated with Google Sheets API for sync. Authentication is handled via NextAuth. Export capabilities implemented using jsPDF and AutoTable. Deployed on Vercel for instant global accessibility.'
+    },
+    {
+      id: '3',
+      title: 'Ecommerce Seller Admin Panel',
+      tools: getSkillsByIds([
+        'React',
+        'Redux',
+        'Auth0',
+        'GraphQL',
+        'Material UI',
+        'JavaScript',
+        'Vercel'
+      ]),
+      description: `The Ecommerce Seller Admin Panel is a feature-rich dashboard built for multichannel sellers managing products across Flipkart, Amazon, Meesho, and more. Designed with React, Material UI, and Redux, it allows sellers to manage inventory, process returns, generate bills, and export data. Integrated with Auth0 for secure login, and GraphQL for efficient data flow, this system helps ecommerce sellers operate at scale with precision.`,
+      demoImg:
+        'https://i.ibb.co/bgTmMw8B/Screenshot-2025-07-31-at-5-15-58-PM.png',
+      live: 'https://ecomadmin.vercel.app',
+      feature: true,
+      challenges: [
+        {
+          title: 'Multi-Marketplace Complexity',
+          solution:
+            'Implemented separate views and filters for Flipkart, Amazon, Meesho, and other channels to allow sellers to isolate and analyze data independently.'
+        },
+        {
+          title: 'Large-Scale Inventory Handling',
+          solution:
+            'Utilized React Virtualized and MUI Data Grid to enable smooth performance while rendering thousands of rows with advanced filters and CSV export.'
+        },
+        {
+          title: 'Export & Data Interoperability',
+          solution:
+            'Built CSV, Excel, and PDF export features using PapaParse, jsPDF, and FileSaver.js for end-to-end reconciliation and reporting.'
+        }
+      ],
+      keyFeatures: [
+        'Multi-channel sales tracking (Flipkart, Amazon, Meesho)',
+        'Sales, returns, and payments view with date filters',
+        'Inventory listing with SKU, order ID, invoice amount',
+        'Data export in CSV, Excel, PDF',
+        'Responsive sidebar navigation with icons',
+        'Secure login via Auth0',
+        'Advanced filtering and virtualized grid for large datasets'
+      ],
+      architecture:
+        'Built with React 17 and Redux Toolkit for state management. Auth0 handles authentication, while Material UI provides a consistent responsive interface. GraphQL is used for structured querying, and data exports are handled using PapaParse and jsPDF. Deployed on Vercel for instant scalability.'
     },
     {
       id: 'ckrylfipkguz90b93u2q265ma',

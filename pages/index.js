@@ -41,7 +41,7 @@ export default function Homepage({
       <ContentWrapper>
         <Hero />
         <About skills={skills} />
-        <FeaturedProjects projects={[projects[0], projects[1]]} />
+        <FeaturedProjects projects={[projects[0], projects[1], projects[2]]} />
         <Contact linkedin={linkedin} github={github} />
       </ContentWrapper>
     </Container>

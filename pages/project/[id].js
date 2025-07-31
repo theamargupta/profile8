@@ -22,6 +22,7 @@ import Icon from '@chakra-ui/icon';
 import { toolsIcons } from '@/utils/icons';
 import { useColorModeSwitcher } from '@/utils/hooks/useColorModeSwitcher';
 import NextLink from 'next/link';
+import { ContentWrapper } from '@/layouts/contentWrapper';
 
 const ProjectCaseStudy = ({ project, socials }) => {
   const router = useRouter();
@@ -39,11 +40,11 @@ const ProjectCaseStudy = ({ project, socials }) => {
       title={`${project.title} - Case Study | Amar Gupta`}
       socials={socials}
     >
-      <VStack spacing="2rem">
+      <ContentWrapper>
         <ProjectHeader project={project} />
         <ProjectContent project={project} />
         <ProjectNavigation project={project} />
-      </VStack>
+      </ContentWrapper>
     </Container>
   );
 };
@@ -118,7 +119,7 @@ const ProjectContent = ({ project }) => {
   const { colorDark, colorGrey, colorLight } = useColorModeSwitcher();
 
   return (
-    <Box w={{ md: '90%', '2xl': '100%' }}>
+    <Box w={{ base: '90%', '2xl': '100%' }}>
       <Grid
         templateColumns={{ base: '1fr', lg: '2fr 1fr' }}
         gap={{ base: '2rem', lg: '4rem' }}
